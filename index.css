@@ -1,0 +1,330 @@
+/* Brand tokens and primitives */
+:root{
+  --motion-blue:#1E40AF;    /* Primary */
+  --clourk-orange:#F97316;  /* Secondary */
+  --cloud:#F3F4F6;          /* Light background */
+  --night:#111827;          /* Dark background */
+  --cyant:#0891B2;          /* Accent */
+}
+
+/* Heuristic 1: Light comes from the sky (shadows below, highlights above) */
+.elevate{ 
+  box-shadow: 0 20px 50px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.08);
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.elevate-sm{ 
+  box-shadow: 0 8px 24px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.elevate-lg{ 
+  box-shadow: 0 32px 64px rgba(0,0,0,.16), 0 8px 16px rgba(0,0,0,.1);
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+/* Heuristic 3: Double whitespace */
+.double-space{ padding: 32px; }
+.double-space-sm{ padding: 24px; }
+.double-space-lg{ padding: 48px; }
+
+/* Heuristic 4: 8pt grid helpers */
+.space-grid{ padding: 16px; }
+.space-grid-sm{ padding: 8px; }
+.space-grid-lg{ padding: 24px; }
+.space-grid-xl{ padding: 32px; }
+
+/* Heuristic 5: One accent variations */
+.brand-primary{ background-color: var(--motion-blue); }
+.brand-primary-hover{ background-color: #1e3a8a; }
+.brand-secondary{ background-color: var(--clourk-orange); }
+.brand-secondary-hover{ background-color: #ea580c; }
+.brand-accent{ background-color: var(--cyant); }
+.brand-accent-hover{ background-color: #0e7490; }
+
+/* Heuristic 6: Text on image overlays */
+.text-overlay{ 
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+}
+.text-overlay-light{ 
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+}
+.text-overlay-dark{ 
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+}
+
+/* Heuristic 7: Typography hierarchy */
+.text-pop{ font-weight: 700; font-size: 1.25em; }
+.text-unpop{ font-weight: 400; opacity: 0.8; }
+
+/* Heuristic 10: CTA prominence */
+.cta-primary{ 
+  background: linear-gradient(135deg, var(--clourk-orange), var(--cyant));
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  border: none;
+}
+
+.cta-primary:hover {
+  background: linear-gradient(135deg, #ea580c, #0e7490);
+  box-shadow: 0 12px 32px rgba(249, 115, 22, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Heuristic 23: Overlay gradient asset */
+.gradient-overlay{ 
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+}
+
+/* Utility: brand gradient used in CTAs and emphasis blocks */
+.brand-gradient{ background-image: linear-gradient(135deg, var(--clourk-orange), var(--cyant)); }
+
+/* Text balance for long headings */
+.balance{ text-wrap: balance; }
+
+/* Dan Mall-style Visual Pop */
+
+/* Micro-interactions and delightful animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(8, 145, 178, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(8, 145, 178, 0.6); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  75% { transform: rotate(-1deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Delightful hover states */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(8, 145, 178, 0.4);
+  transform: scale(1.05);
+}
+
+.hover-wiggle:hover {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+.hover-float:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Shimmer effect for CTAs */
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Bounce-in animation for cards */
+.bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Slide-up animation for content */
+.slide-up {
+  animation: slide-up 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Pulse glow for important elements */
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Interactive button states */
+.btn-magic {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-magic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-magic:hover::before {
+  left: 100%;
+}
+
+.btn-magic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Floating elements */
+.float-element {
+  animation: float 3s ease-in-out infinite;
+}
+
+.float-element:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.float-element:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, var(--clourk-orange), var(--cyant));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Interactive cards with depth */
+.card-interactive {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.card-interactive:hover {
+  transform: translateY(-12px) rotateX(5deg);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+/* Staggered animations */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Visual flourishes */
+.sparkle {
+  position: relative;
+}
+
+.sparkle::after {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.2em;
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Magnetic hover effect */
+.magnetic {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.magnetic:hover {
+  transform: scale(1.1);
+}
+
+/* Improved secondary button styling with brand colors */
+.btn-secondary {
+  background-color: var(--night);
+  border: 2px solid var(--night);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(17, 24, 39, 0.2);
+}
+
+.btn-secondary:hover {
+  background-color: var(--cyant);
+  border-color: var(--cyant);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(8, 145, 178, 0.3);
+}
+
+.btn-secondary:focus {
+  outline: 2px solid var(--cyant);
+  outline-offset: 2px;
+}
+
+/* Orange brand button */
+.btn-orange {
+  background-color: var(--clourk-orange);
+  border: 2px solid var(--clourk-orange);
+  color: white;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.2);
+}
+
+.btn-orange:hover {
+  background-color: var(--cyant);
+  border-color: var(--cyant);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(8, 145, 178, 0.3);
+}
+
+.btn-orange:focus {
+  outline: 2px solid var(--cyant);
+  outline-offset: 2px;
+}
+
+/* Cyan brand button */
+.btn-cyan {
+  background-color: var(--cyant);
+  border: 2px solid var(--cyant);
+  color: white;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(8, 145, 178, 0.2);
+}
+
+.btn-cyan:hover {
+  background-color: var(--clourk-orange);
+  border-color: var(--clourk-orange);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+}
+
+.btn-cyan:focus {
+  outline: 2px solid var(--clourk-orange);
+  outline-offset: 2px;
+}
+
+
