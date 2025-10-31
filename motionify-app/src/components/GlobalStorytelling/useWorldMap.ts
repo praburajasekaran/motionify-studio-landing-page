@@ -54,7 +54,7 @@ export function useWorldMap(svgSelector: string, containerSelector: string) {
           .data(countries.features)
           .enter()
           .append('path')
-          .attr('d', path)
+          .attr('d', (d: any) => path(d) as string)
           .attr('fill', 'rgba(255,255,255,.03)')
           .attr('stroke', 'rgba(255,255,255,.1)')
           .attr('stroke-width', .5)
