@@ -1,0 +1,3041 @@
+<html lang="en" class="h-full"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Motionify.Studio — Human‑Centered Video Agency</title>
+    <link rel="preconnect href=" https:="" fonts.googleapis.com"="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- D3.js and TopoJSON for Global Storytelling Map -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+  <link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+  <body class="min-h-screen text-white bg-gray-950 selection:bg-indigo-500/30 selection:text-white antialiased" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial;">
+    <style>
+      @keyframes panGradient {
+        0% { transform: translate3d(0,0,0) scale(1.1); }
+        50% { transform: translate3d(2%, -2%, 0) scale(1.12); }
+        100% { transform: translate3d(0,0,0) scale(1.1); }
+      }
+      @keyframes floatSoft {
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-6px) rotate(1deg); }
+        100% { transform: translateY(0px) rotate(0deg); }
+      }
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      /* Hide carousel scrollbar */
+      #logoTrack::-webkit-scrollbar { display: none; }
+      #logoTrack { -ms-overflow-style: none; scrollbar-width: none; }
+
+      /* Scroll-driven reveal animations (CSS-only) */
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes slideIn {
+        from { opacity: 0; transform: translateX(16px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+
+      /* Quiz Section Animations */
+      @keyframes questionFadeIn {
+        from { 
+          opacity: 0; 
+          transform: translateY(24px) scale(0.96);
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0) scale(1);
+        }
+      }
+      @keyframes chipSelect {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+      @keyframes sparkle {
+        0%, 100% { 
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+        50% { 
+          transform: scale(1.3) rotate(180deg);
+          opacity: 0.8;
+        }
+      }
+      @keyframes glow {
+        0%, 100% { 
+          box-shadow: 0 0 20px rgba(168, 85, 247, 0.3),
+                      0 0 40px rgba(168, 85, 247, 0.1);
+        }
+        50% { 
+          box-shadow: 0 0 30px rgba(168, 85, 247, 0.5),
+                      0 0 60px rgba(168, 85, 247, 0.2);
+        }
+      }
+
+      /* Quiz Option Chip Styling */
+      .quiz-option {
+        padding: 12px 24px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      .quiz-option:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+      }
+      .quiz-option:active {
+        transform: translateY(0) scale(0.98);
+      }
+      .quiz-option.selected {
+        background: linear-gradient(to right, #d946ef, #8b5cf6, #3b82f6);
+        border-color: rgba(255, 255, 255, 0.4);
+        animation: chipSelect 0.4s ease-out, glow 2s ease-in-out infinite;
+        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+      }
+      .quiz-option:focus-visible {
+        outline: 2px solid rgba(139, 92, 246, 0.5);
+        outline-offset: 2px;
+      }
+
+      /* Question Animation Classes */
+      .quiz-question.active {
+        display: block !important;
+        animation: questionFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      .quiz-question.fade-out {
+        animation: fadeOut 0.3s ease-out forwards;
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; transform: translateY(0); }
+        to { opacity: 0; transform: translateY(-16px); }
+      }
+
+      /* Sparkle Effect for Selections */
+      .sparkle-container {
+        position: absolute;
+        pointer-events: none;
+        z-index: 50;
+      }
+      .sparkle {
+        position: absolute;
+        font-size: 24px;
+        animation: sparkle 0.8s ease-out forwards;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+      }
+
+      /* Progress bar pulse effect */
+      @keyframes progressPulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
+      }
+      #progress-bar {
+        animation: progressPulse 2s ease-in-out infinite;
+      }
+
+      /* Responsive enhancements */
+      @media (max-width: 1023px) {
+        .quiz-option {
+          padding: 14px 24px;
+          font-size: 15px;
+          min-height: 44px; /* Touch-friendly */
+        }
+      }
+      
+      @media (max-width: 640px) {
+        .quiz-option {
+          padding: 16px 20px;
+          font-size: 14px;
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Floating icon glow animation */
+      @keyframes iconGlow {
+        0%, 100% { 
+          filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.4));
+        }
+        50% { 
+          filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.6));
+        }
+      }
+      .floating-icon {
+        animation: floatSoft 8s ease-in-out infinite, iconGlow 3s ease-in-out infinite;
+      }
+
+      /* Process Section Animations */
+      @keyframes processCardFadeUp {
+        from { 
+          opacity: 0; 
+          transform: translateY(32px);
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes cardHoverGlow {
+        0%, 100% { 
+          box-shadow: 0 4px 20px rgba(168, 85, 247, 0.2),
+                      0 8px 40px rgba(168, 85, 247, 0.1);
+        }
+        50% { 
+          box-shadow: 0 8px 30px rgba(168, 85, 247, 0.4),
+                      0 12px 60px rgba(168, 85, 247, 0.2);
+        }
+      }
+
+      @keyframes connectorGrow {
+        from {
+          transform: scaleX(0);
+          opacity: 0;
+        }
+        to {
+          transform: scaleX(1);
+          opacity: 1;
+        }
+      }
+
+      /* Creative Control Room Animations */
+      @keyframes progressFill {
+        from {
+          width: 0%;
+          opacity: 0;
+        }
+        to {
+          width: 70%;
+          opacity: 1;
+        }
+      }
+
+      @keyframes chatBubblePop {
+        from {
+          opacity: 0;
+          transform: translateY(12px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes statusGlow {
+        0%, 100% {
+          box-shadow: 0 0 20px rgba(6, 182, 212, 0.4),
+                      0 0 40px rgba(6, 182, 212, 0.2),
+                      inset 0 0 20px rgba(6, 182, 212, 0.1);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(6, 182, 212, 0.6),
+                      0 0 60px rgba(6, 182, 212, 0.3),
+                      inset 0 0 30px rgba(6, 182, 212, 0.2);
+        }
+      }
+
+      @keyframes cursorBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      @keyframes dashboardFadeIn {
+        from {
+          opacity: 0;
+          transform: translateX(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Dashboard elements */
+      .dashboard-progress-bar {
+        animation: progressFill 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation-delay: 0.5s;
+        width: 0%;
+      }
+
+      .chat-bubble-1 {
+        animation: chatBubblePop 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation-delay: 0.8s;
+        opacity: 0;
+      }
+
+      .chat-bubble-2 {
+        animation: chatBubblePop 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation-delay: 1.3s;
+        opacity: 0;
+      }
+
+      .status-badge-glow {
+        animation: statusGlow 2s ease-in-out infinite;
+      }
+
+      .cursor-blink::after {
+        content: '|';
+        animation: cursorBlink 1s step-end infinite;
+        margin-left: 2px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Tooltip styling */
+      .milestone-tooltip {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-8px);
+        background: rgba(15, 23, 42, 0.95);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s, transform 0.2s;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 50;
+      }
+
+      .milestone-tooltip::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 4px solid transparent;
+        border-top-color: rgba(15, 23, 42, 0.95);
+      }
+
+      .milestone:hover .milestone-tooltip {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-12px);
+      }
+
+      /* Process card hover effects */
+      .process-card {
+        position: relative;
+      }
+
+      .process-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+        padding: 1px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .process-step:hover .process-card::before {
+        opacity: 1;
+      }
+
+      /* Scroll-driven animations for process steps */
+      @media (prefers-reduced-motion: no-preference) {
+        .process-step {
+          view-timeline-name: --process-step;
+          view-timeline-axis: inline;
+          animation: processCardFadeUp linear both;
+          animation-timeline: --process-step;
+          animation-range: entry 0% cover 40%;
+        }
+      }
+
+      /* Hide scrollbar for process track */
+      .process-track-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Process dot styling */
+      .process-dot {
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: #d1d5db; /* gray-300 */
+        border-radius: 9999px;
+        border: none;
+        outline: none;
+        padding: 0.5rem; /* 8px padding for larger clickable area */
+        margin: -0.5rem; /* Negative margin to maintain visual spacing */
+      }
+      
+      .process-dot:hover:not(.active) {
+        background-color: #9ca3af; /* gray-400 */
+        transform: scale(1.25);
+      }
+      
+      .process-dot:focus-visible {
+        outline: 2px solid #8b5cf6;
+        outline-offset: 4px;
+      }
+      
+      /* Active process dot styling - wider pill shape with gradient */
+      .process-dot.active {
+        background: linear-gradient(135deg, #d946ef, #8b5cf6, #3b82f6);
+        width: 2rem; /* 32px wide pill */
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.5);
+        transform: scale(1.05);
+      }
+      
+      /* Inactive dots stay small circles */
+      .process-dot:not(.active) {
+        width: 0.5rem; /* 8px circle */
+      }
+      
+      /* Add subtle animation to active dot */
+      @keyframes dotPulse {
+        0%, 100% { 
+          box-shadow: 0 4px 12px rgba(139, 92, 246, 0.5);
+          transform: scale(1.05);
+        }
+        50% { 
+          box-shadow: 0 4px 16px rgba(139, 92, 246, 0.7);
+          transform: scale(1.08);
+        }
+      }
+      
+      .process-dot.active {
+        animation: dotPulse 2.5s ease-in-out infinite;
+      }
+      
+      /* Add a subtle ripple effect on click */
+      @keyframes dotRipple {
+        0% { 
+          box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.5);
+        }
+        100% { 
+          box-shadow: 0 0 0 8px rgba(139, 92, 246, 0);
+        }
+      }
+      
+      .process-dot:active:not(.active) {
+        animation: dotRipple 0.4s ease-out;
+      }
+      
+      /* Solution dot styling */
+      .solution-dot {
+        padding: 0.375rem; /* Increase hit area for better clickability */
+        margin: -0.375rem; /* Offset padding to maintain visual spacing */
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+      
+      .solution-dot.active {
+        background-color: #4b5563 !important; /* bg-gray-600 */
+        width: 1.5rem !important; /* w-6 - 24px wide */
+        height: 0.375rem !important; /* h-1.5 - 6px tall */
+        border-radius: 9999px !important; /* Fully rounded pill */
+      }
+      
+      /* Inactive solution dots stay small circles */
+      .solution-dot:not(.active) {
+        width: 0.375rem !important; /* w-1.5 - 6px */
+        height: 0.375rem !important; /* h-1.5 - 6px */
+        border-radius: 9999px !important;
+      }
+
+      /* Glow effect on active step number */
+      @keyframes stepNumberGlow {
+        0%, 100% {
+          box-shadow: 0 0 20px rgba(217, 70, 239, 0.6),
+                      0 0 40px rgba(139, 92, 246, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(217, 70, 239, 0.8),
+                      0 0 60px rgba(139, 92, 246, 0.6);
+        }
+      }
+
+      .process-step.active .absolute.rounded-full {
+        animation: stepNumberGlow 2s ease-in-out infinite;
+      }
+
+      /* Global Storytelling Section Animations */
+      @keyframes globeRotate {
+        0% { 
+          transform: rotate(0deg);
+          opacity: 0.3;
+        }
+        50% { 
+          transform: rotate(180deg);
+          opacity: 0.4;
+        }
+        100% { 
+          transform: rotate(360deg);
+          opacity: 0.3;
+        }
+      }
+
+      @keyframes regionPulse {
+        0%, 100% {
+          filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.4)) 
+                  drop-shadow(0 0 16px rgba(6, 182, 212, 0.2));
+          opacity: 0.8;
+        }
+        50% {
+          filter: drop-shadow(0 0 16px rgba(6, 182, 212, 0.8)) 
+                  drop-shadow(0 0 32px rgba(6, 182, 212, 0.4));
+          opacity: 1;
+        }
+      }
+
+      @keyframes auroraFlow {
+        0% {
+          stroke-dashoffset: 1000;
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.6;
+        }
+        100% {
+          stroke-dashoffset: 0;
+          opacity: 0.3;
+        }
+      }
+
+      @keyframes mapFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Global map styles */
+      .global-map-container {
+        animation: mapFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+
+      .region-marker {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .region-marker:hover {
+        transform: scale(1.15);
+        animation: regionPulse 1.5s ease-in-out infinite;
+      }
+
+      .globe-grid {
+        animation: globeRotate 60s linear infinite;
+      }
+
+      .aurora-path {
+        animation: auroraFlow 8s ease-in-out infinite;
+      }
+
+      /* Responsive adjustments for Global Storytelling Section */
+      @media (max-width: 1023px) {
+        #world-map {
+          height: 400px;
+        }
+        #global-map-container {
+          min-height: 400px !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        #world-map {
+          height: 350px;
+        }
+        #global-map-container {
+          min-height: 350px !important;
+          border-radius: 1.5rem;
+        }
+        .region-marker {
+          cursor: default; /* Better UX on touch devices */
+        }
+        /* Adjust floating icons on mobile */
+        .pointer-events-none span {
+          font-size: 1.25rem;
+        }
+      }
+
+      /* Support Section Animations */
+      @keyframes gentlePulse {
+        0%, 100% { 
+          transform: scale(1);
+          box-shadow: 0 8px 24px rgba(255, 170, 136, 0.3),
+                      0 4px 12px rgba(255, 139, 123, 0.2);
+        }
+        50% { 
+          transform: scale(1.02);
+          box-shadow: 0 12px 32px rgba(255, 170, 136, 0.4),
+                      0 6px 16px rgba(255, 139, 123, 0.3);
+        }
+      }
+
+      @keyframes teamCardReveal {
+        from {
+          opacity: 0;
+          transform: translateY(24px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes hoverCardSlideUp {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes chatBubbleFloat {
+        0%, 100% {
+          transform: translateY(0) scale(1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: translateY(-8px) scale(1.05);
+          opacity: 1;
+        }
+      }
+
+      @keyframes warmGlow {
+        0%, 100% {
+          box-shadow: 0 0 20px rgba(255, 170, 136, 0.2),
+                      0 0 40px rgba(255, 139, 123, 0.1);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(255, 170, 136, 0.3),
+                      0 0 60px rgba(255, 139, 123, 0.15);
+        }
+      }
+
+      /* Support Team Card Styling */
+      .team-card {
+        position: relative;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .team-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .team-card .hover-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255, 170, 136, 0.95), rgba(255, 139, 123, 0.95));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        border-radius: inherit;
+      }
+
+      .team-card:hover .hover-overlay {
+        opacity: 1;
+        animation: hoverCardSlideUp 0.3s ease forwards;
+      }
+
+      /* Floating chat bubble */
+      .floating-chat-bubble {
+        animation: chatBubbleFloat 3s ease-in-out infinite;
+      }
+    </style>
+
+    <!-- Header -->
+    <header class="relative z-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between py-5">
+          <!-- Brand -->
+          <a href="#" class="inline-flex items-center gap-3 group">
+            <img src="motionify-light-logo.png" alt="Motionify.Studio" class="h-8 sm:h-9 w-auto transition-opacity group-hover:opacity-90">
+          </a>
+          <!-- Actions -->
+          <div class="hidden sm:flex items-center gap-3">
+            <a href="#" class="text-sm text-white/80 hover:text-white transition">Work</a>
+            <a href="#" class="text-sm text-white/80 hover:text-white transition">Approach</a>
+            <a href="#" class="text-sm text-white/80 hover:text-white transition">Pricing</a>
+            <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 px-4 py-2 text-sm font-medium hover:bg-gray-100 transition shadow">
+              Get in touch
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right opacity-80"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+          <button class="sm:hidden inline-flex items-center rounded-md border border-white/10 bg-white/5 px-2.5 py-2 text-sm hover:bg-white/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" class="lucide lucide-menu"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="relative">
+      <!-- Background: Cinematic gradient + parallax layers -->
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <!-- Animated gradient texture -->
+        <div class="absolute inset-0 opacity-[0.85]" style="
+          background: radial-gradient(1200px 600px at 20% 20%, rgba(168,85,247,0.20), transparent 60%),
+                      radial-gradient(1000px 800px at 80% 30%, rgba(59,130,246,0.18), transparent 60%),
+                      radial-gradient(900px 700px at 40% 80%, rgba(14,165,233,0.16), transparent 60%);
+          filter: blur(0px);
+        "></div>
+        <div class="absolute inset-0" style="
+          background: linear-gradient(120deg, rgba(186,123,255,0.14), rgba(59,130,246,0.12) 40%, rgba(99,102,241,0.12) 70%, rgba(14,165,233,0.10));
+          animation: panGradient 16s ease-in-out infinite;
+        "></div>
+
+        <!-- Parallax colored orbs -->
+        <div class="parallax-layer absolute -top-24left-24 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-30" data-depth="0." style="background: radial-gradient(circle at 30% 30%, rgba(168, 85, 247, 0.35), rgba(168, 85, 247, 0) 60%); transform: translate3d(0px, 0px, 0px);"></div>
+        <div class="parallax-layer absolute -bottom-28 -right-16 h-[26rem] w-[26rem] rounded-full blur-3xl opacity-25" data-depth="0.12" style="background: radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.35), rgba(59, 130, 246, 0) 60%); transform: translate3d(-2.4px, -2.4px, 0px);"></div>
+        <div class="parallax-layer absolute top-1/3 left-1/2 -translate-x-1/2 h-[32rem] w-[32rem] rounded-full blur-3xl opacity-20" data-depth="0.05" style="background: radial-gradient(circle, rgba(14, 165, 233, 0.28), rgba(14, 165, 233, 0) 60%); transform: translate3d(-1px, -1px, 0px);"></div>
+
+        <!-- Floating emojis and icons -->
+        <div class="pointer-events-none">
+          <span class="parallax-layer absolute left-[6%] top-[22%] text-2xl sm:text-3xl opacity-70" data-depth="0.25" style="animation: 6s ease-in-out 0s infinite normal none running floatSoft; transform: translate3d(-5px, -5px, 0px);">✨</span>
+          <span class="parallax-layer absolute right-[8%] top-[28%] text-xl sm:text-2xl opacity-60" data-depth="0.18" style="animation: 7s ease-in-out 0s infinite normal none running floatSoft; transform: translate3d(-3.6px, -3.6px, 0px);">🎬</span>
+          <span class="parallax-layer absolute left-[14%] bottom-[18%] text-xl opacity-60" data-depth="0.20" style="animation: 7.5s ease-in-out 0s infinite normal none running floatSoft; transform: translate3d(-4px, -4px, 0px);">✨</span>
+          <span class="parallax-layer absolute right-[14%] bottom-[22%] text-2xl opacity-60" data-depth="0.16" style="animation: 6.5s ease-in-out 0s infinite normal none running floatSoft; transform: translate3d(-3.2px, -3.2px, 0px);">🎬</span>
+
+          <div class="parallax-layer absolute left-[50%] top-[18%] -translate-x-1/2 opacity-70" data-depth="0.22" style="animation: 8s ease-in-out 0s infinite normal none running floatSoft; transform: translate3d(-4.4px, -4.4px, 0px);">
+            <div class="h-9 w-9 rounded-xl bg-white/10 ring-1 ring-white/10 backdrop-blur flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" class="lucide lucide-sparkles text-white/80"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+            </div>
+          </div>
+          <div class="parallax-layer absolute left-[12%] top-[60%] opacity-70" data-depth="0.14" style="animation: 9s ease-in-out 0s infinite normal none running floatSoft; transform: translate3d(-2.8px, -2.8px, 0px);">
+            <div class="h-9 w-9 rounded-xl bg-white/10 ring-1 ring-white/10 backdrop-blur flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="clapperboard" class="lucide lucide-clapperboard text-white/80"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"></path><path d="m6.2 5.3 3.1 3.9"></path><path d="m12.4 3.4 3.1 4"></path><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Masked container for subtle edge fade -->
+      <section class="relative">
+        <div class="sm:pt-20 lg:pt-28 sm:pb-16 lg:pb-20 pt-16 pb-12" style="font-family: 'Fraunces', serif">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+              <!-- Left: Headline + copy -->
+              <div class="lg:col-span-7">
+                <div class="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-[11px] text-white/80 ring-1 ring-white/10 backdrop-blur">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Human‑centered video for modern brands
+                </div>
+                <h1 class="mt-4 sm:mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight font-semibold leading-[1.05]">
+                  Crafting stories that connect &amp; convert.
+                </h1>
+                <p class="sm:mt-5 sm:text-lg md:text-xl text-base text-white/80 max-w-2xl mt-4" style="font-family: 'Fraunces', serif">
+                  We blend cinematic emotion with data‑driven strategy—so every frame earns attention and every story moves people to action.
+                </p>
+
+                <!-- CTAs -->
+                <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:items-center">
+                  <a href="#video-style-quiz" class="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-blue-500 px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(99,102,241,0.35)] hover:brightness-110 transition">
+                    <span class="">Find Your Video Style</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="wand-2" class="lucide lucide-wand-2"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"></path><path d="m14 7 3 3"></path><path d="M5 6v4"></path><path d="M19 14v4"></path><path d="M10 2v2"></path><path d="M7 8H3"></path><path d="M21 16h-4"></path><path d="M11 3H9"></path></svg>
+                  </a>
+                  <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-3 text-sm font-medium text-white ring-1 ring-white/20 hover:bg-white/15 hover:ring-white/30 transition backdrop-blur">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="rocket" class="lucide lucide-rocket"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+                    <span>Start Your Project</span>
+                  </a>
+                </div>
+
+                <!-- Trust metrics -->
+                <div class="mt-8 sm:mt-10 grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-4 max-w-3xl">
+                  <div class="flex items-center gap-3 rounded-2xl bg-white/5 ring-1 ring-white/10 px-4 py-3 backdrop-blur">
+                    <div class="h-9 w-9 rounded-lg bg-white/10 ring-1 ring-white/10 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="film" class="lucide lucide-film text-white/80"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M7 3v18"></path><path d="M3 7.5h4"></path><path d="M3 12h18"></path><path d="M3 16.5h4"></path><path d="M17 3v18"></path><path d="M17 7.5h4"></path><path d="M17 16.5h4"></path></svg>
+                    </div>
+                    <div class="">
+                      <p class="text-sm text-white/70">500+ Videos Created</p>
+                      <p class="text-sm font-medium tracking-tight">Across industries</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 rounded-2xl bg-white/5 ring-1 ring-white/10 px-4 py-3 backdrop-blur">
+                    <div class="h-9 w-9 rounded-lg bg-white/10 ring-1 ring-white/10 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="smile" class="lucide lucide-smile text-white/80"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" x2="9.01" y1="9" y2="9"></line><line x1="15" x2="15.01" y1="9" y2="9"></line></svg>
+                    </div>
+                    <div>
+                      <p class="text-sm text-white/70">98% Client Satisfaction</p>
+                      <p class="text-sm font-medium tracking-tight">Measured post‑launch</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3 rounded-2xl bg-white/5 ring-1 ring-white/10 px-4 py-3 backdrop-blur">
+                    <div class="h-9 w-9 rounded-lg bg-white/10 ring-1 ring-white/10 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" class="lucide lucide-shield-check text-white/80"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    </div>
+                    <div class="">
+                      <p class="text-sm text-white/70">Trusted by leading brands</p>
+                      <p class="text-sm font-medium tracking-tight">From seed to enterprise</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Cinematic collage -->
+              <div class="lg:col-span-5">
+                <div class="relative mx-auto lg:ml-auto w-full max-w-md">
+                  <!-- Glow -->
+                  <div class="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-fuchsia-500/20 via-violet-500/20 to-blue-500/20 blur-2xl"></div>
+                  <div class="relative grid grid-cols-2 gap-3">
+                    <div class="space-y-3">
+                      <div class="aspect-[3/4] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5 backdrop-blur shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Behind the scenes set" class="w-full h-full object-cover opacity-90">
+                      </div>
+                      <div class="aspect-[4/3] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5 backdrop-blur shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1451188502541-13943edb6acb?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Editor timeline" class="w-full h-full object-cover opacity-90">
+                      </div>
+                    </div>
+                    <div class="space-y-3 pt-6">
+                      <div class="aspect-[4/3] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5 backdrop-blur shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&amp;q=80" alt="Cinematic lighting" class="w-full h-full object-cover opacity-90">
+                      </div>
+                      <div class="aspect-[3/4] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5 backdrop-blur shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Director’s monitor" class="w-full h-full object-cover opacity-90">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Floating badge -->
+                  <div class="pointer-events-none">
+                    <div class="absolute -right-3 -top-3 flex items-center gap-2 rounded-xl bg-white/90 px-3 py-2 shadow-xl ring-1 ring-black/5 backdrop-blur">
+                      <div class="h-8 w-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-fuchsia-500 flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" class="lucide lucide-target text-white"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                      </div>
+                      <div>
+                        <p class="text-[11px] text-gray-600" style="font-family:'Fraunces', serif;">Strategy</p>
+                        <p class="text-sm font-medium text-gray-900 tracking-tight">Conversion‑ready edits</p>
+                      </div>
+                    </div>
+                    <div class="absolute -left-3 -bottom-3 flex items-center gap-2 rounded-xl bg-white/90 px-3 py-2 shadow-xl ring-1 ring-black/5 backdrop-blur">
+                      <div class="h-8 w-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-blue-600 flex items-center justify-center shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="cpu" class="lucide lucide-cpu text-white"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+                      </div>
+                      <div>
+                        <p class="text-[11px] text-gray-600" style="font-family:'Fraunces', serif;">Insights</p>
+                        <p class="text-sm font-medium text-gray-900 tracking-tight">Performance analytics</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Client logo carousel -->
+            <div class="mt-12 sm:mt-16">
+              <p class="text-xs sm:text-sm text-white/60 mb-3">Trusted by teams shaping the future</p>
+              <div class="relative">
+                <!-- Edge masks -->
+                <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-950 to-transparent"></div>
+                <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-950 to-transparent"></div>
+
+                <!-- Marquee track -->
+                <div class="overflow-hidden">
+                  <div class="flex gap-8 sm:gap-12 items-center whitespace-nowrap animate-[marquee_28s_linear_infinite] will-change-transform" id="logoTrack">
+                    <!-- Duplicate row for seamless loop -->
+                    <div class="flex gap-8 sm:gap-12 items-center">
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5 ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur grayscale hover:grayscale-0 transition">TechCorp</div>
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5 ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur grayscale hover:grayscale-0 transition">StartupX</div>
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5 ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur grayscale hover:grayscale-0 transition">BrandY</div>
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5 ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur grayscale hover:grayscale-0 transition">CompanyZ</div>
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5 ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur grayscale hover:grayscale-0 transition">InnovateCo</div>
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5 ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur grayscale hover:grayscale-0 transition">FutureBrand</div>
+                    </div>
+                    <div class="flex gap-8 sm:gap-12 items-center" aria-hidden="true">
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5 ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur grayscale">TechCorp</div>
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5 ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur grayscale">StartupX</div>
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/ ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-bl grayscale">BrandY</div>
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur">CompanyZ</div>
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5 ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur grayscale">InnovateCo</div>
+                      <div class="h-10 px-4 sm:px-6 rounded-lg bg-white/5 ring-1 ring-white/10 text-white/70 tracking-[0.12em] uppercase text-xs sm:text-sm font-medium backdrop-blur grayscale">FutureBrand</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- /max-w -->
+        </div>
+      </section>
+
+      <!-- Video Style Quiz Section -->
+      <section id="video-style-quiz" class="relative py-20 sm:py-28 overflow-hidden">
+        <!-- Cinematic gradient background (continuing from hero) -->
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+          <!-- Animated gradient texture -->
+          <div class="absolute inset-0 opacity-[0.85]" style="
+            background: radial-gradient(1200px 600px at 20% 20%, rgba(168,85,247,0.20), transparent 60%),
+                        radial-gradient(1000px 800px at 80% 30%, rgba(59,130,246,0.18), transparent 60%),
+                        radial-gradient(900px 700px at 40% 80%, rgba(14,165,233,0.16), transparent 60%);
+            filter: blur(0px);
+          "></div>
+          <div class="absolute inset-0" style="
+            background: linear-gradient(120deg, rgba(186,123,255,0.14), rgba(59,130,246,0.12) 40%, rgba(99,102,241,0.12) 70%, rgba(14,165,233,0.10));
+            animation: panGradient 16s ease-in-out infinite;
+          "></div>
+
+          <!-- Parallax colored orbs -->
+          <div class="parallax-layer absolute -top-24 left-1/4 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-30" data-depth="0.08" style="background: radial-gradient(circle at 30% 30%, rgba(168, 85, 247, 0.35), rgba(168, 85, 247, 0) 60%);"></div>
+          <div class="parallax-layer absolute top-1/2 right-1/4 h-[26rem] w-[26rem] rounded-full blur-3xl opacity-25" data-depth="0.12" style="background: radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.35), rgba(59, 130, 246, 0) 60%);"></div>
+
+          <!-- Floating particles -->
+          <div class="pointer-events-none">
+            <span class="parallax-layer absolute left-[8%] top-[25%] text-2xl opacity-70" data-depth="0.25" style="animation: floatSoft 6s ease-in-out infinite;">✨</span>
+            <span class="parallax-layer absolute right-[12%] top-[35%] text-2xl opacity-60" data-depth="0.18" style="animation: floatSoft 7s ease-in-out infinite;">🎬</span>
+            <span class="parallax-layer absolute left-[15%] bottom-[30%] text-xl opacity-60" data-depth="0.20" style="animation: floatSoft 7.5s ease-in-out infinite;">✨</span>
+            
+            <!-- Floating camera icon with glow -->
+            <div class="parallax-layer absolute right-[8%] bottom-[25%] opacity-70" data-depth="0.22">
+              <div class="floating-icon h-12 w-12 rounded-xl bg-white/10 ring-1 ring-white/10 backdrop-blur flex items-center justify-center relative">
+                <div class="absolute inset-0 rounded-xl bg-gradient-to-tr from-fuchsia-500/20 to-blue-500/20 blur-md"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/80 relative z-10">
+                  <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                  <circle cx="12" cy="13" r="3"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="relative">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-12 sm:mb-16">
+              <div class="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-[11px] text-white/80 ring-1 ring-white/10 backdrop-blur mb-4">
+                <span class="h-1.5 w-1.5 rounded-full bg-fuchsia-400"></span>
+                Find Your Perfect Video Style
+              </div>
+              <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight" style="font-family: 'Fraunces', serif;">
+                Let's Create Something Amazing
+              </h2>
+              <p class="mt-4 text-base sm:text-lg text-white/70 max-w-2xl mx-auto">
+                Answer a few quick questions and we'll recommend the perfect video style for your brand.
+              </p>
+            </div>
+
+            <!-- Two-column layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+              
+              <!-- Left Column: Question Flow -->
+              <div class="lg:col-span-7">
+                <!-- Progress Indicator -->
+                <div id="quiz-progress" class="flex items-center gap-3 mb-8 opacity-0 transition-opacity duration-500">
+                  <div class="flex-1 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="h-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-blue-500 transition-all duration-500 ease-out" style="width: 0%;"></div>
+                  </div>
+                  <span id="progress-text" class="text-sm text-white/60 font-medium">1 of 5</span>
+                </div>
+
+                <!-- Question Container -->
+                <div id="quiz-questions" class="space-y-8">
+                  
+                  <!-- Question 1: Niche -->
+                  <div class="quiz-question opacity-0" data-question="0" style="display: none;">
+                    <div class="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 sm:p-8">
+                      <h3 class="text-2xl sm:text-3xl font-semibold mb-2">What's your niche?</h3>
+                      <p class="text-white/60 text-sm mb-6">Help us understand your industry</p>
+                      <div class="flex flex-wrap gap-3">
+                        <button class="quiz-option" data-question="niche" data-value="Tech">Tech</button>
+                        <button class="quiz-option" data-question="niche" data-value="Healthcare">Healthcare</button>
+                        <button class="quiz-option" data-question="niche" data-value="Retail">Retail</button>
+                        <button class="quiz-option" data-question="niche" data-value="Real Estate">Real Estate</button>
+                        <button class="quiz-option" data-question="niche" data-value="Education">Education</button>
+                        <button class="quiz-option" data-question="niche" data-value="Other">Other</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Question 2: Target Audience -->
+                  <div class="quiz-question opacity-0" data-question="1" style="display: none;">
+                    <div class="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 sm:p-8">
+                      <h3 class="text-2xl sm:text-3xl font-semibold mb-2">Who's your target audience?</h3>
+                      <p class="text-white/60 text-sm mb-6">Who are you trying to reach?</p>
+                      <div class="flex flex-wrap gap-3">
+                        <button class="quiz-option" data-question="audience" data-value="Consumers">Consumers</button>
+                        <button class="quiz-option" data-question="audience" data-value="Businesses">Businesses</button>
+                        <button class="quiz-option" data-question="audience" data-value="Investors">Investors</button>
+                        <button class="quiz-option" data-question="audience" data-value="Employees">Employees</button>
+                        <button class="quiz-option" data-question="audience" data-value="Students">Students</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Question 3: Video Style -->
+                  <div class="quiz-question opacity-0" data-question="2" style="display: none;">
+                    <div class="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 sm:p-8">
+                      <h3 class="text-2xl sm:text-3xl font-semibold mb-2">What kind of video style appeals to you?</h3>
+                      <p class="text-white/60 text-sm mb-6">Choose your preferred visual approach</p>
+                      <div class="flex flex-wrap gap-3">
+                        <button class="quiz-option" data-question="style" data-value="Live Action">Live Action</button>
+                        <button class="quiz-option" data-question="style" data-value="Animation">Animation</button>
+                        <button class="quiz-option" data-question="style" data-value="Mixed Media">Mixed Media</button>
+                        <button class="quiz-option" data-question="style" data-value="Motion Graphics">Motion Graphics</button>
+                        <button class="quiz-option" data-question="style" data-value="Minimal Explainer">Minimal Explainer</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Question 4: Mood & Tone -->
+                  <div class="quiz-question opacity-0" data-question="3" style="display: none;">
+                    <div class="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 sm:p-8">
+                      <h3 class="text-2xl sm:text-3xl font-semibold mb-2">What mood or tone best fits your message?</h3>
+                      <p class="text-white/60 text-sm mb-6">Set the emotional direction</p>
+                      <div class="flex flex-wrap gap-3">
+                        <button class="quiz-option" data-question="mood" data-value="Emotional">Emotional</button>
+                        <button class="quiz-option" data-question="mood" data-value="Playful">Playful</button>
+                        <button class="quiz-option" data-question="mood" data-value="Inspirational">Inspirational</button>
+                        <button class="quiz-option" data-question="mood" data-value="Corporate">Corporate</button>
+                        <button class="quiz-option" data-question="mood" data-value="Bold">Bold</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Question 5: Duration -->
+                  <div class="quiz-question opacity-0" data-question="4" style="display: none;">
+                    <div class="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 sm:p-8">
+                      <h3 class="text-2xl sm:text-3xl font-semibold mb-2">What's your ideal duration?</h3>
+                      <p class="text-white/60 text-sm mb-6">Choose the length that fits your goals</p>
+                      <div class="flex flex-wrap gap-3">
+                        <button class="quiz-option" data-question="duration" data-value="Reels">Reels (&lt;1 min)</button>
+                        <button class="quiz-option" data-question="duration" data-value="Explainer">Explainer (1–2 min)</button>
+                        <button class="quiz-option" data-question="duration" data-value="Demo">Demo (2–5 min)</button>
+                        <button class="quiz-option" data-question="duration" data-value="Any">Any</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Right Column: Live Preview / Recommendation Card -->
+              <div class="lg:col-span-5">
+                <div class="sticky top-8">
+                  
+                  <!-- Initial placeholder state -->
+                  <div id="preview-placeholder" class="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 text-center min-h-[400px] flex flex-col items-center justify-center transition-opacity duration-500">
+                    <div class="h-16 w-16 rounded-2xl bg-white/10 ring-1 ring-white/10 backdrop-blur flex items-center justify-center mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/60"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"></path><path d="m14 7 3 3"></path><path d="M5 6v4"></path><path d="M19 14v4"></path><path d="M10 2v2"></path><path d="M7 8H3"></path><path d="M21 16h-4"></path><path d="M11 3H9"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-medium text-white/80 mb-2">Your Recommendation</h3>
+                    <p class="text-sm text-white/50">Complete the quiz to discover your perfect video style</p>
+                  </div>
+
+                  <!-- Recommendation card (hidden initially) -->
+                  <div id="recommendation-card" class="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur overflow-hidden opacity-0 transition-opacity duration-500" style="display: none;">
+                    <!-- Abstract gradient thumbnail -->
+                    <div id="rec-thumbnail" class="aspect-video bg-gradient-to-br from-fuchsia-500/30 via-violet-500/30 to-blue-500/30 relative overflow-hidden">
+                      <div class="absolute inset-0" style="animation: panGradient 12s ease-in-out infinite;"></div>
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="h-14 w-14 rounded-2xl bg-white/20 ring-1 ring-white/20 backdrop-blur flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="p-6 sm:p-8">
+                      <div class="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-xs text-emerald-300 ring-1 ring-emerald-500/20 backdrop-blur mb-4">
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                        Our Recommendation
+                      </div>
+                      <h3 id="rec-title" class="text-xl sm:text-2xl font-semibold mb-2" style="font-family: 'Fraunces', serif;">Mixed Media Explainer</h3>
+                      <p id="rec-subtitle" class="text-base text-white/70 font-medium mb-3">Dynamic & Engaging</p>
+                      <p id="rec-description" class="text-sm text-white/60 leading-relaxed mb-6">
+                        Combine live-action and motion graphics for a vibrant, data-driven story that grabs attention and converts.
+                      </p>
+                      <a href="#" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-blue-500 px-6 py-3 text-sm font-medium text-white shadow-lg hover:brightness-110 transition">
+                        <span>Start This Project</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- New: Light-mode Portfolio Section -->
+      <section class="relative overflow-hidden py-16 sm:py-20 bg-gray-50">
+        <!-- Light motion background with faint video texture -->
+        <div class="absolute inset-0 -z-10">
+          <div class="absolute inset-0" style="background: linear-gradient(120deg, rgba(99,102,241,0.06), rgba(59,130,246,0.06) 40%, rgba(168,85,247,0.06)); animation: panGradient 22s ease-in-out infinite;"></div>
+          <div class="absolute inset-0 opacity-60" style="background-image: repeating-linear-gradient(0deg, rgba(17,24,39,0.03) 0px, rgba(17,24,39,0.03) 1px, transparent 1px, transparent 3px);"></div>
+          <div class="absolute -inset-x-20 -top-24 h-56 rounded-full blur-3xl opacity-40" style="background: radial-gradient(60% 120% at 50% 0%, rgba(99,102,241,0.20), rgba(99,102,241,0));"></div>
+          <div class="absolute -inset-x-24 -bottom-28 h-72 rounded-full blur-3xl opacity-35" style="background: radial-gradient(80% 140% at 50% 100%, rgba(59,130,246,0.16), rgba(59,130,246,0));"></div>
+        </div>
+
+        <!-- Separator to transition from dark hero -->
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="relative">
+            <div class="flex items-end justify-between mb-6 sm:mb-8">
+              <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-gray-900">See Creativity in Motion.</h2>
+            </div>
+
+            <!-- Grid of 5 project cards -->
+            <div class="relative">
+              <!-- Cinematic glow behind grid -->
+              <div class="pointer-events-none absolute -inset-x-10 -top-6 h-24 rounded-full blur-2xl opacity-70" style="background: radial-gradient(60% 100% at 50% 50%, rgba(99,102,241,0.18), rgba(99,102,241,0));"></div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
+                <!-- 1. Fitch Learning — Educational Video Series -->
+                <a href="#" class="group relative rounded-2xl overflow-hidden bg-white/60 ring-1 ring-gray-200 shadow-sm hover:shadow-xl transition">
+                  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent"></div>
+                  <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Fitch Learning — classroom and training visuals" class="w-full h-full object-cover transition duration-500 ease-out group-hover:scale-[1.04]">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/35 via-blue-500/20 to-transparent opacity-70 transition duration-300 group-hover:opacity-80"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                      <div class="opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300">
+                        <div class="h-11 w-11 rounded-full bg-white/90 ring-1 ring-black/5 shadow-lg flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="play" class="lucide lucide-play text-gray-900"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-3 sm:p-4">
+                    <p class="text-sm font-medium tracking-tight text-gray-900">Fitch Learning</p>
+                    <p class="text-xs text-gray-600 mt-0.5">Educational Video Series</p>
+                  </div>
+                </a>
+
+                <!-- 2. Indospace — 3D Simulation Walkthrough -->
+                <a href="#" class="group relative rounded-2xl overflow-hidden bg-white/60 ring-1 ring-gray-200 shadow-sm hover:shadow-xl transition">
+                  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"></div>
+                  <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Indospace — 3D simulation render" class="w-full h-full object-cover transition duration-500 ease-out group-hover:scale-[1.04]">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/35 via-blue-500/20 to-transparent opacity-70 transition duration-300 group-hover:opacity-80"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                      <div class="opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300">
+                        <div class="h-11 w-11 rounded-full bg-white/90 ring-1 ring-black/5 shadow-lg flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="play" class="lucide lucide-play text-gray-900"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-3 sm:p-4">
+                    <p class="text-sm font-medium tracking-tight text-gray-900">Indospace</p>
+                    <p class="text-xs text-gray-600 mt-0.5">3D Simulation Walkthrough</p>
+                  </div>
+                </a>
+
+                <!-- 3. TVS Credit — Financial Product Explainer -->
+                <a href="#" class="group relative rounded-2xl overflow-hidden bg-white/60 ring-1 ring-gray-200 shadow-sm hover:shadow-xl transition">
+                  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent"></div>
+                  <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1553729784-e91953dec042?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="TVS Credit — financial product visuals" class="w-full h-full object-cover transition duration-500 ease-out group-hover:scale-[1.04]">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/35 via-teal-500/20 to-transparent opacity-70 transition duration-300 group-hover:opacity-80"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                      <div class="opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300">
+                        <div class="h-11 w-11 rounded-full bg-white/90 ring-1 ring-black/5 shadow-lg flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="play" class="lucide lucide-play text-gray-900"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-3 sm:p-4">
+                    <p class="text-sm font-medium tracking-tight text-gray-900">TVS Credit</p>
+                    <p class="text-xs text-gray-600 mt-0.5">Financial Product Explainer</p>
+                  </div>
+                </a>
+
+                <!-- 4. Wild Watches — Animated Brand Promo -->
+                <a href="#" class="group relative rounded-2xl overflow-hidden bg-white/60 ring-1 ring-gray-200 shadow-sm hover:shadow-xl transition">
+                  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent"></div>
+                  <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Wild Watches — product and brand animation frames" class="w-full h-full object-cover transition duration-500 ease-out group-hover:scale-[1.04]">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/35 via-rose-500/20 to-transparent opacity-70 transition duration-300 group-hover:opacity-80"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                      <div class="opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300">
+                        <div class="h-11 w-11 rounded-full bg-white/90 ring-1 ring-black/5 shadow-lg flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="play" class="lucide lucide-play text-gray-900"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-3 sm:p-4">
+                    <p class="text-sm font-medium tracking-tight text-gray-900">Wild Watches</p>
+                    <p class="text-xs text-gray-600 mt-0.5">Animated Brand Promo</p>
+                  </div>
+                </a>
+
+                <!-- 5. Dopplr — SaaS Launch Story -->
+                <a href="#" class="group relative rounded-2xl overflow-hidden bg-white/60 ring-1 ring-gray-200 shadow-sm hover:shadow-xl transition">
+                  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent"></div>
+                  <div class="relative aspect-[16/10] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Dopplr — SaaS launch and product story" class="w-full h-full object-cover transition duration-500 ease-out group-hover:scale-[1.04]">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-violet-600/35 via-indigo-500/20 to-transparent opacity-70 transition duration-300 group-hover:opacity-80"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                      <div class="opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300">
+                        <div class="h-11 w-11 rounded-full bg-white/90 ring-1 ring-black/5 shadow-lg flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="play" class="lucide lucide-play text-gray-900"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-3 sm:p-4">
+                    <p class="text-sm font-medium tracking-tight text-gray-900">Dopplr</p>
+                    <p class="text-xs text-gray-600 mt-0.5">SaaS Launch Story</p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Explore button -->
+              <div class="mt-8 sm:mt-10 flex justify-center">
+                <a href="#" class="inline-flex items-center gap-2 sm:px-6 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-300 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-blue-600 rounded-full pt-3 pr-5 pb-3 pl-5 shadow-[0_8px_24px_rgba(99,102,241,0.25)]">
+                  Explore Full Portfolio
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- New: Solutions, Not Just Services. -->
+      <section class="overflow-hidden sm:py-20 bg-gradient-to-br from-white via-gray-50 to-indigo-50 pt-16 pb-16 relative">
+        <!-- Top divider -->
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+        <!-- Soft glow accents (light mode) -->
+        <div class="pointer-events-none absolute -inset-x-24 -top-24 h-64 blur-3xl opacity-60" style="background: radial-gradient(60% 120% at 50% 0%, rgba(99,102,241,0.18), rgba(99,102,241,0));"></div>
+        <div class="pointer-events-none absolute -inset-x-24 -bottom-28 h-72 blur-3xl opacity-50" style="background: radial-gradient(80% 140% at 50% 100%, rgba(59,130,246,0.16), rgba(59,130,246,0));"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Title + copy -->
+          <div class="flex flex-col gap-3 sm:gap-4">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-gray-900">
+              Solutions, Not Just Services.
+            </h2>
+            <p class="text-xl sm:text-2xl font-semibold tracking-tight text-gray-700">
+              Every brand is unique. We craft videos that move people — and metrics.
+            </p>
+            <p class="text-sm sm:text-base text-gray-600 max-w-2xl">
+              From awareness to conversions, our solutions grow with your goals.
+            </p>
+          </div>
+
+          <!-- Cards: redesigned light slider with controls + progress -->
+          <div class="mt-8 relative">
+            <!-- Edge masks (light) -->
+            <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white to-transparent"></div>
+            <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white to-transparent"></div>
+
+            <!-- Slider controls -->
+            <div class="absolute -top-12 right-0 flex items-center gap-2">
+              <button type="button" aria-label="Previous" class="prev-btn h-9 w-9 rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-left" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"></path></svg>
+              </button>
+              <button type="button" aria-label="Next" class="next-btn hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 flex text-gray-700 bg-white w-9 h-9 border-gray-200 border rounded-full shadow-sm items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"></path></svg>
+              </button>
+            </div>
+
+            <div id="solutionsTrack" class="flex gap-4 sm:gap-5 overflow-x-auto snap-x snap-mandatory pb-2 scroll-smooth" style="scrollbar-width: none; -ms-overflow-style: none;">
+              <style>
+                #solutionsTrack::-webkit-scrollbar { display: none; }
+              </style>
+
+              <!-- 1. Brand Awareness -->
+              <div class="snap-start shrink-0 w-[260px] sm:w-[300px] md:w-[320px] rounded-2xl bg-white ring-1 ring-gray-200 shadow-sm hover:shadow-xl transition ease-out hover:-translate-y-0.5" style="view-timeline-name: --reveal1; view-timeline-axis: block; animation-timeline: --reveal1; animation-name: fadeUp; animation-range: entry 15% cover 30%; animation-fill-mode: both;">
+                <div class="p-5">
+                  <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-violet-50 to-teal-50 ring-1 ring-gray-200 flex items-center justify-center text-violet-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="megaphone" class="lucide lucide-megaphone"><path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"></path><path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14"></path><path d="M8 6v8"></path></svg>
+                  </div>
+                  <h3 class="mt-3 text-base font-medium tracking-tight text-gray-900">Brand Awareness</h3>
+                  &lt; class="mt-1 text-sm text-gray-600"&gt;Build your identity and capture attention.<p></p>
+                </div>
+              </div>
+
+              <!-- 2. Product Launch -->
+              <div class="snap-start shrink-0 w-[260px] sm:w-[300px] md:w-[320px] rounded-2xl bg-white ring-1 ring-gray-200 shadow-sm hover:shadow-xl transition ease-out hover:-translate-y-0.5" style="view-timeline-name: --reveal2; view-timeline-axis: block; animation-timeline: --reveal2; animation-name: slideIn; animation-range: entry 15% cover 30%; animation-fill-mode: both;">
+                <div class="p-5">
+                  <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-indigo-50 to-emerald-50 ring-1 ring-gray-200 flex items-center justify-center text-indigo-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="rocket" class="lucide lucide-rocket"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+                  </div>
+                  <h3 class="mt-3 text-base font-medium tracking-tight text-gray-900">Product Launch</h3>
+                  <p class="mt-1 text-sm text-gray-600">Generate buzz and showcase innovation.</p>
+                </div>
+              </div>
+
+              <!-- 3. Training & Education -->
+              <div class="snap-start shrink-0 w-[260px] sm:w-[300px] md:w-[320px] rounded-2xl bg-white ring-1 ring-gray-200 shadow-sm hover:shadow-xl transition ease-out hover:-translate-y-0.5" style="view-timeline-name: --reveal3; view-timeline-axis: block; animation-timeline: --reveal3; animation-name: fadeUp; animation-range: entry 15% cover 30%; animation-fill-mode: both;">
+                <div class="p-5">
+                  <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-cyan-50 to-fuchsia-50 ring-1 ring-gray-200 flex items-center justify-center text-cyan-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="graduation-cap" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                  </div>
+              <h3 class="mt-3 text-base font-medium tracking-tight text-gray-900">Training &amp; Education</h3>
+              <p class="mt-1 text-sm text-gray-600">Simplify complex ideas.</p>
+            </div>
+          </div>
+
+          <!-- More solution cards would go here -->
+        </div>
+
+        <!-- Progress indicators for slider -->
+        <div class="flex justify-center gap-2 mt-6">
+          <div class="solution-dot h-1.5 w-1.5 rounded-full bg-gray-300 cursor-pointer transition-all duration-300 hover:bg-gray-400" data-solution-index="0"></div>
+          <div class="solution-dot h-1.5 w-1.5 rounded-full bg-gray-300 cursor-pointer transition-all duration-300 hover:bg-gray-400" data-solution-index="1"></div>
+          <div class="solution-dot h-1.5 w-1.5 rounded-full bg-gray-300 cursor-pointer transition-all duration-300 hover:bg-gray-400" data-solution-index="2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- From Idea to Impact — Process Section -->
+    <section class="relative overflow-hidden py-20 sm:py-28 bg-gray-50">
+      <!-- Light gradient background with soft color overlays -->
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <!-- Animated gradient texture -->
+        <div class="absolute inset-0" style="background: linear-gradient(120deg, rgba(99,102,241,0.06), rgba(59,130,246,0.06) 40%, rgba(168,85,247,0.06)); animation: panGradient 22s ease-in-out infinite;"></div>
+        <div class="absolute inset-0 opacity-60" style="background-image: repeating-linear-gradient(0deg, rgba(17,24,39,0.03) 0px, rgba(17,24,39,0.03) 1px, transparent 1px, transparent 3px);"></div>
+        
+        <!-- Subtle colored orbs -->
+        <div class="absolute -inset-x-20 -top-24 h-56 rounded-full blur-3xl opacity-40" style="background: radial-gradient(60% 120% at 50% 0%, rgba(99,102,241,0.20), rgba(99,102,241,0));"></div>
+        <div class="absolute -inset-x-24 -bottom-28 h-72 rounded-full blur-3xl opacity-35" style="background: radial-gradient(80% 140% at 50% 100%, rgba(59,130,246,0.16), rgba(59,130,246,0));"></div>
+
+        <!-- Floating particles for studio feel -->
+        <div class="pointer-events-none">
+          <span class="parallax-layer absolute left-[8%] top-[25%] text-2xl opacity-40" data-depth="0.25" style="animation: floatSoft 6s ease-in-out infinite;">✨</span>
+          <span class="parallax-layer absolute right-[12%] top-[35%] text-2xl opacity-35" data-depth="0.18" style="animation: floatSoft 7s ease-in-out infinite;">🎬</span>
+          <span class="parallax-layer absolute left-[15%] bottom-[30%] text-xl opacity-35" data-depth="0.20" style="animation: floatSoft 7.5s ease-in-out infinite;">✨</span>
+          
+          <!-- Floating icon with glow -->
+          <div class="parallax-layer absolute right-[8%] bottom-[25%] opacity-40" data-depth="0.22">
+            <div class="floating-icon h-12 w-12 rounded-xl bg-gray-900/10 ring-1 ring-gray-900/10 backdrop-blur flex items-center justify-center relative">
+              <div class="absolute inset-0 rounded-xl bg-gradient-to-tr from-fuchsia-500/10 to-blue-500/10 blur-md"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-700 relative z-10">
+                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                <circle cx="12" cy="13" r="3"></circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Separator line to transition from light Portfolio section -->
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative">
+          
+          <!-- Section Header -->
+          <div class="text-center mb-12 sm:mb-16">
+            <div class="inline-flex items-center gap-2 rounded-full bg-gray-900/5 px-3 py-1 text-[11px] text-gray-700 ring-1 ring-gray-900/10 backdrop-blur mb-4">
+              <span class="h-1.5 w-1.5 rounded-full bg-fuchsia-500"></span>
+              Your Journey with Motionify
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-gray-900" style="font-family: 'Fraunces', serif;">
+              From Idea to Impact
+            </h2>
+            <p class="mt-4 text-base sm:text-lg text-gray-700 max-w-2xl mx-auto">
+              Every frame, every milestone — crafted with clarity, creativity, and care.
+            </p>
+          </div>
+
+          <!-- Process Timeline Container -->
+          <div class="relative">
+            <!-- Navigation Controls -->
+            <div class="absolute -top-16 right-0 flex items-center gap-2 z-10">
+              <button type="button" aria-label="Previous step" class="process-prev-btn h-10 w-10 rounded-full bg-gray-900/10 ring-1 ring-gray-900/20 text-gray-900 backdrop-blur hover:bg-gray-900/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40 flex items-center justify-center transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+              </button>
+              <button type="button" aria-label="Next step" class="process-next-btn h-10 w-10 rounded-full bg-gray-900/10 ring-1 ring-gray-900/20 text-gray-900 backdrop-blur hover:bg-gray-900/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900/40 flex items-center justify-center transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+              </button>
+            </div>
+
+            <!-- Edge masks -->
+            <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
+            <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
+
+            <!-- Scrollable Process Track -->
+            <div id="processTrack" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth process-track-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+              
+              <!-- Step 1: Choose & Customize -->
+              <div class="process-step snap-start shrink-0 w-[280px] sm:w-[320px] relative group" data-step="1">
+                <!-- Glowing step number badge -->
+                <div class="absolute -top-3 -left-3 h-12 w-12 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 flex items-center justify-center text-white font-bold text-lg shadow-lg ring-4 ring-gray-100 z-10">
+                  <span>1</span>
+                  <div class="absolute inset-0 rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 blur-md opacity-60 animate-pulse"></div>
+                </div>
+
+                <!-- Card -->
+                <div class="process-card rounded-3xl bg-white ring-1 ring-gray-200 backdrop-blur p-6 sm:p-8 min-h-[320px] flex flex-col transition-all duration-300 hover:bg-gray-50 hover:ring-gray-300 hover:shadow-2xl hover:-translate-y-1">
+                  <!-- Icon -->
+                  <div class="h-14 w-14 rounded-2xl bg-gray-900/5 ring-1 ring-gray-900/10 backdrop-blur flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-700">
+                      <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                      <circle cx="12" cy="13" r="3"></circle>
+                    </svg>
+                  </div>
+                  
+                  <!-- Content -->
+                  <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900" style="font-family: 'Fraunces', serif;">
+                    Choose & Customize
+                  </h3>
+                  <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Pick your video style and tailor it to your brand.
+                  </p>
+                </div>
+
+                <!-- Connector line -->
+                <div class="absolute top-1/2 -right-6 w-6 h-0.5 bg-gradient-to-r from-gray-300 to-transparent hidden sm:block"></div>
+              </div>
+
+              <!-- Step 2: Submit Your Brief -->
+              <div class="process-step snap-start shrink-0 w-[280px] sm:w-[320px] relative group" data-step="2">
+                <div class="absolute -top-3 -left-3 h-12 w-12 rounded-full bg-gradient-to-br from-violet-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-lg ring-4 ring-gray-100 z-10">
+                  <span>2</span>
+                  <div class="absolute inset-0 rounded-full bg-gradient-to-br from-violet-500 to-blue-600 blur-md opacity-60 animate-pulse"></div>
+                </div>
+
+                <div class="process-card rounded-3xl bg-white ring-1 ring-gray-200 backdrop-blur p-6 sm:p-8 min-h-[320px] flex flex-col transition-all duration-300 hover:bg-gray-50 hover:ring-gray-300 hover:shadow-2xl hover:-translate-y-1">
+                  <div class="h-14 w-14 rounded-2xl bg-gray-900/5 ring-1 ring-gray-900/10 backdrop-blur flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-700">
+                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" x2="8" y1="13" y2="13"></line>
+                      <line x1="16" x2="8" y1="17" y2="17"></line>
+                      <line x1="10" x2="8" y1="9" y2="9"></line>
+                    </svg>
+                  </div>
+                  
+                  <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900" style="font-family: 'Fraunces', serif;">
+                    Submit Your Brief
+                  </h3>
+                  <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Share goals, tone, and creative direction.
+                  </p>
+                </div>
+
+                <div class="absolute top-1/2 -right-6 w-6 h-0.5 bg-gradient-to-r from-gray-300 to-transparent hidden sm:block"></div>
+              </div>
+
+              <!-- Step 3: Add-Ons -->
+              <div class="process-step snap-start shrink-0 w-[280px] sm:w-[320px] relative group" data-step="3">
+                <div class="absolute -top-3 -left-3 h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white font-bold text-lg shadow-lg ring-4 ring-gray-100 z-10">
+                  <span>3</span>
+                  <div class="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 blur-md opacity-60 animate-pulse"></div>
+                </div>
+
+                <div class="process-card rounded-3xl bg-white ring-1 ring-gray-200 backdrop-blur p-6 sm:p-8 min-h-[320px] flex flex-col transition-all duration-300 hover:bg-gray-50 hover:ring-gray-300 hover:shadow-2xl hover:-translate-y-1">
+                  <div class="h-14 w-14 rounded-2xl bg-gray-900/5 ring-1 ring-gray-900/10 backdrop-blur flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-700">
+                      <path d="M12 5v14"></path>
+                      <path d="M5 12h14"></path>
+                      <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                  </div>
+                  
+                  <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900" style="font-family: 'Fraunces', serif;">
+                    Add-Ons
+                  </h3>
+                  <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Scriptwriting, multilingual voiceovers, localization, subtitles.
+                  </p>
+                </div>
+
+                <div class="absolute top-1/2 -right-6 w-6 h-0.5 bg-gradient-to-r from-gray-300 to-transparent hidden sm:block"></div>
+              </div>
+
+              <!-- Step 4: Track Progress -->
+              <div class="process-step snap-start shrink-0 w-[280px] sm:w-[320px] relative group" data-step="4">
+                <div class="absolute -top-3 -left-3 h-12 w-12 rounded-full bg-gradient-to-br from-cyan-500 to-teal-600 flex items-center justify-center text-white font-bold text-lg shadow-lg ring-4 ring-gray-100 z-10">
+                  <span>4</span>
+                  <div class="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-500 to-teal-600 blur-md opacity-60 animate-pulse"></div>
+                </div>
+
+                <div class="process-card rounded-3xl bg-white ring-1 ring-gray-200 backdrop-blur p-6 sm:p-8 min-h-[320px] flex flex-col transition-all duration-300 hover:bg-gray-50 hover:ring-gray-300 hover:shadow-2xl hover:-translate-y-1">
+                  <div class="h-14 w-14 rounded-2xl bg-gray-900/5 ring-1 ring-gray-900/10 backdrop-blur flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-700">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                  </div>
+                  
+                  <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900" style="font-family: 'Fraunces', serif;">
+                    Track Progress
+                  </h3>
+                  <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Access milestones, previews, and feedback loops.
+                  </p>
+                </div>
+
+                <div class="absolute top-1/2 -right-6 w-6 h-0.5 bg-gradient-to-r from-gray-300 to-transparent hidden sm:block"></div>
+              </div>
+
+              <!-- Step 5: Download & Shine -->
+              <div class="process-step snap-start shrink-0 w-[280px] sm:w-[320px] relative group" data-step="5">
+                <div class="absolute -top-3 -left-3 h-12 w-12 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-lg ring-4 ring-gray-100 z-10">
+                  <span>5</span>
+                  <div class="absolute inset-0 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 blur-md opacity-60 animate-pulse"></div>
+                </div>
+
+                <div class="process-card rounded-3xl bg-white ring-1 ring-gray-200 backdrop-blur p-6 sm:p-8 min-h-[320px] flex flex-col transition-all duration-300 hover:bg-gray-50 hover:ring-gray-300 hover:shadow-2xl hover:-translate-y-1">
+                  <div class="h-14 w-14 rounded-2xl bg-gray-900/5 ring-1 ring-gray-900/10 backdrop-blur flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-700">
+                      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                      <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                    </svg>
+                  </div>
+                  
+                  <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900" style="font-family: 'Fraunces', serif;">
+                    Download & Shine
+                  </h3>
+                  <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Get final assets ready for every platform.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Progress Dots -->
+            <div class="flex justify-center items-center gap-3 mt-12">
+              <button type="button" aria-label="Go to step 1" class="process-dot h-2" data-dot="1"></button>
+              <button type="button" aria-label="Go to step 2" class="process-dot h-2" data-dot="2"></button>
+              <button type="button" aria-label="Go to step 3" class="process-dot h-2" data-dot="3"></button>
+              <button type="button" aria-label="Go to step 4" class="process-dot h-2" data-dot="4"></button>
+              <button type="button" aria-label="Go to step 5" class="process-dot h-2" data-dot="5"></button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Creative Control Room Section -->
+    <section class="relative overflow-hidden py-20 sm:py-28 bg-white">
+      <!-- Subtle separator from Process Section -->
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+      <!-- Warm light gradient background -->
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <!-- Base gradient with warm tones -->
+        <div class="absolute inset-0" style="
+          background: linear-gradient(135deg, 
+            #FFF9F5 0%, 
+            #FFF5F0 25%, 
+            #F5F5FF 50%,
+            #F0F4FF 75%,
+            #F9F5FF 100%);
+        "></div>
+
+        <!-- Animated gradient overlay -->
+        <div class="absolute inset-0" style="background: linear-gradient(120deg, rgba(99,102,241,0.06), rgba(6,182,212,0.06) 40%, rgba(168,85,247,0.05)); animation: panGradient 22s ease-in-out infinite;"></div>
+        <div class="absolute inset-0 opacity-50" style="background-image: repeating-linear-gradient(0deg, rgba(17,24,39,0.02) 0px, rgba(17,24,39,0.02) 1px, transparent 1px, transparent 3px);"></div>
+
+        <!-- Subtle colored orbs -->
+        <div class="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full blur-3xl opacity-30" 
+             style="background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 70%);"></div>
+        <div class="pointer-events-none absolute top-1/2 right-1/4 h-80 w-80 rounded-full blur-3xl opacity-25" 
+             style="background: radial-gradient(circle, rgba(6, 182, 212, 0.12), transparent 70%);"></div>
+
+        <!-- Floating collaboration icons -->
+        <div class="pointer-events-none">
+          <span class="absolute left-[10%] top-[20%] text-2xl opacity-30" style="animation: floatSoft 7s ease-in-out infinite;">✨</span>
+          <span class="absolute right-[15%] top-[30%] text-2xl opacity-30" style="animation: floatSoft 8s ease-in-out infinite 1s;">🎬</span>
+          <span class="absolute left-[12%] bottom-[25%] text-xl opacity-30" style="animation: floatSoft 6.5s ease-in-out infinite 0.5s;">📁</span>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative">
+          
+          <!-- Two-column grid layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left Column: Hero Title & Subheadline -->
+            <div class="space-y-6">
+              <div class="inline-flex items-center gap-2 rounded-full bg-gray-900/5 px-3 py-1 text-[11px] text-gray-700 ring-1 ring-gray-900/10 backdrop-blur">
+                <span class="h-1.5 w-1.5 rounded-full bg-cyan-500"></span>
+                Stay Connected
+              </div>
+              
+              <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
+                Your Creative Control Room
+              </h2>
+              
+              <p class="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-xl">
+                Track every milestone, chat with your producer, and watch your story come to life in real time.
+              </p>
+
+              <div class="flex flex-wrap gap-4 pt-4">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center justify-center h-10 w-10 rounded-full bg-cyan-500/10 ring-1 ring-cyan-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-600">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm text-gray-600">Real-time chat</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center justify-center h-10 w-10 rounded-full bg-violet-500/10 ring-1 ring-violet-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-violet-600">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm text-gray-600">Live progress</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-500/10 ring-1 ring-blue-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" x2="12" y1="15" y2="3"></line>
+                    </svg>
+                  </div>
+                  <span class="text-sm text-gray-600">Instant downloads</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Dashboard Mockup -->
+            <div class="relative" style="animation: dashboardFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;">
+              
+              <!-- Main Dashboard Card -->
+              <div class="relative rounded-2xl sm:rounded-3xl bg-slate-800/60 ring-1 ring-white/10 backdrop-blur-xl shadow-2xl overflow-hidden">
+                
+                <!-- Project Header -->
+                <div class="p-6 sm:p-8 border-b border-white/5">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                      <h3 class="text-xl sm:text-2xl font-semibold text-white mb-2">
+                        Explainer Video — Series A Launch
+                      </h3>
+                      <div class="inline-flex items-center gap-2 rounded-full bg-cyan-500/15 px-3 py-1.5 text-xs font-medium text-cyan-300 ring-1 ring-cyan-500/30 status-badge-glow">
+                        <span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+                        Status: In Review
+                      </div>
+                    </div>
+                    <!-- Project thumbnail -->
+                    <div class="hidden sm:block h-16 w-16 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 ring-2 ring-white/10 flex-shrink-0 overflow-hidden">
+                      <div class="h-full w-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/90">
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Progress Section -->
+                  <div class="mt-6">
+                    <div class="flex items-center justify-between mb-3">
+                      <span class="text-sm font-medium text-white/70">Progress</span>
+                      <span class="text-sm font-semibold text-white/90">70%</span>
+                    </div>
+                    
+                    <!-- Progress Bar Track -->
+                    <div class="relative h-2 bg-slate-700/50 rounded-full overflow-hidden">
+                      <!-- Animated Progress Fill -->
+                      <div class="dashboard-progress-bar absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-orange-500 via-cyan-500 to-teal-500"></div>
+                    </div>
+
+                    <!-- Milestone Markers -->
+                    <div class="flex items-center justify-between mt-4 relative">
+                      <div class="milestone flex flex-col items-center gap-2 relative group cursor-pointer">
+                        <div class="h-8 w-8 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 ring-2 ring-orange-500/30 flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                        <span class="text-[10px] sm:text-xs text-white/60 font-medium">Script</span>
+                        <div class="milestone-tooltip">Script completed</div>
+                      </div>
+
+                      <div class="milestone flex flex-col items-center gap-2 relative group cursor-pointer">
+                        <div class="h-8 w-8 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 ring-2 ring-cyan-500/30 flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                        <span class="text-[10px] sm:text-xs text-white/60 font-medium">Storyboard</span>
+                        <div class="milestone-tooltip">Storyboard approved</div>
+                      </div>
+
+                      <div class="milestone flex flex-col items-center gap-2 relative group cursor-pointer">
+                        <div class="h-8 w-8 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 ring-2 ring-teal-500/30 flex items-center justify-center">
+                          <div class="h-2 w-2 rounded-full bg-white animate-pulse"></div>
+                        </div>
+                        <span class="text-[10px] sm:text-xs text-white/90 font-medium">Animation</span>
+                        <div class="milestone-tooltip">In progress</div>
+                      </div>
+
+                      <div class="milestone flex flex-col items-center gap-2 relative group cursor-pointer">
+                        <div class="h-8 w-8 rounded-full bg-slate-700/50 ring-2 ring-slate-600/30 flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/40">
+                            <circle cx="12" cy="12" r="1"></circle>
+                          </svg>
+                        </div>
+                        <span class="text-[10px] sm:text-xs text-white/40 font-medium">Delivery</span>
+                        <div class="milestone-tooltip">Coming soon</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chat Window -->
+                <div class="p-6 sm:p-8 bg-slate-900/40">
+                  <div class="flex items-center justify-between mb-4">
+                    <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Project Chat
+                    </h4>
+                    <span class="text-xs text-white/50">Today</span>
+                  </div>
+
+                  <!-- Chat Messages -->
+                  <div class="space-y-4">
+                    
+                    <!-- Message from Sarah (PM) -->
+                    <div class="chat-bubble-1 flex items-start gap-3">
+                      <!-- Avatar -->
+                      <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-600 ring-2 ring-violet-500/30 flex items-center justify-center text-white font-semibold text-sm">
+                        S
+                      </div>
+                      <!-- Message content -->
+                      <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 mb-1">
+                          <span class="text-sm font-semibold text-white">Sarah (PM)</span>
+                          <span class="text-xs text-white/40">11:46</span>
+                        </div>
+                        <div class="bg-slate-700/60 rounded-2xl rounded-tl-sm px-4 py-3 backdrop-blur">
+                          <p class="text-sm text-white/90 leading-relaxed">
+                            Hey team! The first draft of the script is ready for your review. Let me know your thoughts!
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Message from You -->
+                    <div class="chat-bubble-2 flex items-start gap-3 flex-row-reverse">
+                      <!-- Avatar -->
+                      <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 ring-2 ring-cyan-500/30 flex items-center justify-center text-white font-semibold text-sm">
+                        Y
+                      </div>
+                      <!-- Message content -->
+                      <div class="flex-1 min-w-0 flex flex-col items-end">
+                        <div class="flex items-center gap-2 mb-1 flex-row-reverse">
+                          <span class="text-sm font-semibold text-white">You</span>
+                          <span class="text-xs text-white/40">11:47</span>
+                        </div>
+                        <div class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%]">
+                          <p class="text-sm text-white leading-relaxed">
+                            Awesome! Taking a look now. Thanks, Sarah!
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Message Input (visual only) -->
+                  <div class="mt-4 flex items-center gap-3 p-3 bg-slate-800/60 rounded-xl ring-1 ring-white/5 group hover:ring-white/10 transition-all">
+                    <input type="text" 
+                           placeholder="Type your message..." 
+                           readonly
+                           class="flex-1 bg-transparent text-sm text-white/60 placeholder:text-white/30 outline-none cursor-not-allowed"
+                    />
+                    <button type="button" class="h-8 w-8 rounded-lg bg-white/5 hover:bg-white/10 transition flex items-center justify-center group/btn cursor-not-allowed opacity-50">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/60">
+                        <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Optional: Download/Asset section (compact) -->
+                <div class="px-6 sm:px-8 py-4 bg-slate-900/60 border-t border-white/5 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="h-10 w-10 rounded-lg bg-white/5 ring-1 ring-white/10 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-sm font-medium text-white/90">Preview Assets</div>
+                      <div class="text-xs text-white/50">3 files available</div>
+                    </div>
+                  </div>
+                  <button type="button" class="group px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:brightness-110 transition flex items-center gap-2 text-sm font-medium text-white shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" x2="12" y1="15" y2="3"></line>
+                    </svg>
+                    <span class="hidden sm:inline">Download</span>
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- Decorative glow behind dashboard -->
+              <div class="absolute -inset-4 bg-gradient-to-br from-cyan-500/15 via-blue-600/15 to-violet-600/15 blur-3xl -z-10 opacity-50"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Smooth gradient transition to dark section -->
+      <div class="absolute inset-x-0 bottom-0 h-32 pointer-events-none" style="background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.3) 50%, rgba(15, 23, 42, 0.6) 100%);"></div>
+    </section>
+
+    <!-- Global Storytelling Section: "Stories that Speak Every Language" -->
+    <section class="relative overflow-hidden py-20 sm:py-28">
+      <!-- Deep midnight blue → indigo gradient background with cinematic glow -->
+      <div class="absolute inset-0 -z-10 overflow-hidden">
+        <!-- Base gradient -->
+        <div class="absolute inset-0" style="
+          background: linear-gradient(135deg, 
+            rgba(15, 23, 42, 1) 0%,
+            rgba(30, 27, 75, 1) 25%,
+            rgba(49, 46, 129, 1) 50%,
+            rgba(30, 27, 75, 1) 75%,
+            rgba(15, 23, 42, 1) 100%);
+        "></div>
+
+        <!-- Animated gradient overlay -->
+        <div class="absolute inset-0 opacity-40" style="
+          background: radial-gradient(1200px 800px at 30% 30%, rgba(139, 92, 246, 0.25), transparent 60%),
+                      radial-gradient(1000px 900px at 70% 50%, rgba(192, 132, 252, 0.20), transparent 60%),
+                      radial-gradient(900px 700px at 50% 80%, rgba(245, 158, 11, 0.15), transparent 60%);
+          animation: panGradient 25s ease-in-out infinite;
+        "></div>
+
+        <!-- Subtle globe grid overlay (decorative) -->
+        <div class="absolute inset-0 opacity-10 globe-grid" style="
+          background-image: 
+            repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(255, 255, 255, 0.03) 49px, rgba(255, 255, 255, 0.03) 50px),
+            repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(255, 255, 255, 0.03) 49px, rgba(255, 255, 255, 0.03) 50px);
+          background-size: 50px 50px;
+        "></div>
+
+        <!-- Ambient light reflections -->
+        <div class="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full blur-3xl opacity-20" 
+             style="background: radial-gradient(circle, rgba(245, 158, 11, 0.5), transparent 70%);"></div>
+        <div class="pointer-events-none absolute top-1/2 right-1/4 h-80 w-80 rounded-full blur-3xl opacity-20" 
+             style="background: radial-gradient(circle, rgba(192, 132, 252, 0.5), transparent 70%);"></div>
+
+        <!-- Floating world icons -->
+        <div class="pointer-events-none">
+          <span class="absolute left-[8%] top-[15%] text-2xl opacity-30" style="animation: floatSoft 8s ease-in-out infinite;">🌍</span>
+          <span class="absolute right-[12%] top-[25%] text-2xl opacity-30" style="animation: floatSoft 9s ease-in-out infinite 1s;">✈️</span>
+          <span class="absolute left-[15%] bottom-[20%] text-xl opacity-30" style="animation: floatSoft 7.5s ease-in-out infinite 0.5s;">🌏</span>
+          <span class="absolute right-[10%] bottom-[30%] text-xl opacity-30" style="animation: floatSoft 8.5s ease-in-out infinite 1.5s;">🌎</span>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header: Badge + Title + Subheadline -->
+        <div class="text-center mb-16 sm:mb-20">
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-[11px] text-white/80 ring-1 ring-white/10 backdrop-blur mb-6">
+            <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+            Global Reach
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white mb-6" style="font-family: 'Fraunces', serif;">
+            Stories that Speak Every Language.
+          </h2>
+          
+          <p class="text-lg sm:text-xl text-white/70 leading-relaxed max-w-3xl mx-auto">
+            Our ideas travel farther than words — blending culture, emotion, and meaning across borders.
+          </p>
+        </div>
+
+        <!-- Interactive World Map Centerpiece -->
+        <div class="relative mb-16 sm:mb-20">
+          <div id="global-map-container" class="global-map-container relative rounded-3xl bg-slate-900/40 ring-1 ring-white/10 backdrop-blur-xl overflow-hidden" style="min-height: 500px;">
+            <!-- Map will be rendered here by D3.js -->
+            <svg id="world-map" width="100%" height="500" class="w-full"></svg>
+            
+            <!-- Decorative glow behind map -->
+            <div class="absolute -inset-4 bg-gradient-to-br from-amber-500/10 via-violet-600/10 to-cyan-500/10 blur-3xl -z-10 opacity-60"></div>
+          </div>
+
+          <!-- Aurora connecting arcs (SVG overlay) -->
+          <svg class="absolute inset-0 pointer-events-none" style="mix-blend-mode: screen; opacity: 0.4;">
+            <defs>
+              <linearGradient id="auroraGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:rgba(6, 182, 212, 0);stop-opacity:0" />
+                <stop offset="50%" style="stop-color:rgba(6, 182, 212, 0.8);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgba(139, 92, 246, 0);stop-opacity:0" />
+              </linearGradient>
+              <linearGradient id="auroraGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:rgba(245, 158, 11, 0);stop-opacity:0" />
+                <stop offset="50%" style="stop-color:rgba(245, 158, 11, 0.8);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgba(192, 132, 252, 0);stop-opacity:0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- Content Columns: Global Capabilities -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+          
+          <!-- Left Column -->
+          <div class="space-y-8">
+            
+            <!-- Global Collaboration -->
+            <div class="group">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 ring-1 ring-cyan-500/30 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white" style="font-family: 'Fraunces', serif;">
+                    Global Collaboration
+                  </h3>
+                  <p class="text-base text-white/70 leading-relaxed">
+                    We partner with brands, agencies, and teams worldwide, adapting every message to local audiences.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cultural Intelligence -->
+            <div class="group">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-600/20 ring-1 ring-violet-500/30 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-violet-400">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white" style="font-family: 'Fraunces', serif;">
+                    Cultural Intelligence
+                  </h3>
+                  <p class="text-base text-white/70 leading-relaxed">
+                    Every frame respects nuance — visuals, language, and rhythm that feel authentic in every region.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column -->
+          <div class="space-y-8">
+            
+            <!-- Multilingual Production -->
+            <div class="group">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-600/20 ring-1 ring-amber-500/30 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400">
+                    <path d="m5 8 6 6"></path>
+                    <path d="m4 14 6-6 2-3"></path>
+                    <path d="M2 5h12"></path>
+                    <path d="M7 2h1"></path>
+                    <path d="m22 22-5-10-5 10"></path>
+                    <path d="M14 18h6"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white" style="font-family: 'Fraunces', serif;">
+                    Multilingual Production
+                  </h3>
+                  <p class="text-base text-white/70 leading-relaxed">
+                    Voiceovers, subtitles, and localized visuals that speak naturally to your market.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- World-Class Craft -->
+            <div class="group">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-teal-500/20 to-emerald-600/20 ring-1 ring-teal-500/30 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-400">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl sm:text-2xl font-semibold mb-2 text-white" style="font-family: 'Fraunces', serif;">
+                    World-Class Craft
+                  </h3>
+                  <p class="text-base text-white/70 leading-relaxed">
+                    Our creative process blends local insight with global creative precision.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center">
+          <button type="button" class="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 transition-all text-white font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transform">
+            <span>Explore Global Case Studies</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+          <p class="mt-4 text-sm text-white/60">
+            Video is universal. We help you speak it beautifully.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Quiz JavaScript -->
+  <script>
+    // Quiz State Management
+    const quizState = {
+      currentQuestion: 0,
+      selections: {
+        niche: null,
+        audience: null,
+        style: null,
+        mood: null,
+        duration: null
+      },
+      isComplete: false
+    };
+
+    // Initialize quiz on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeQuiz();
+    });
+
+    function initializeQuiz() {
+      // Show first question after a brief delay
+      setTimeout(() => {
+        showQuestion(0);
+        document.getElementById('quiz-progress').style.opacity = '1';
+      }, 300);
+
+      // Attach event listeners to all quiz options
+      const options = document.querySelectorAll('.quiz-option');
+      options.forEach(option => {
+        option.addEventListener('click', function() {
+          handleOptionClick(this);
+        });
+      });
+    }
+
+    function showQuestion(index) {
+      const questions = document.querySelectorAll('.quiz-question');
+      
+      // Hide current question if exists
+      if (index > 0) {
+        const prevQuestion = questions[index - 1];
+        prevQuestion.classList.add('fade-out');
+        setTimeout(() => {
+          prevQuestion.style.display = 'none';
+          prevQuestion.classList.remove('active', 'fade-out');
+        }, 300);
+      }
+
+      // Show new question
+      if (index < questions.length) {
+        const nextQuestion = questions[index];
+        setTimeout(() => {
+          nextQuestion.style.display = 'block';
+          setTimeout(() => {
+            nextQuestion.classList.add('active');
+          }, 50);
+        }, index > 0 ? 400 : 0);
+      }
+
+      // Update progress
+      updateProgress(index + 1);
+    }
+
+    function updateProgress(current) {
+      const progressBar = document.getElementById('progress-bar');
+      const progressText = document.getElementById('progress-text');
+      const percentage = (current / 5) * 100;
+      
+      progressBar.style.width = percentage + '%';
+      progressText.textContent = current + ' of 5';
+    }
+
+    function handleOptionClick(button) {
+      const questionType = button.getAttribute('data-question');
+      const value = button.getAttribute('data-value');
+      
+      // Save selection
+      quizState.selections[questionType] = value;
+      
+      // Visual feedback - mark as selected
+      const siblings = button.parentElement.querySelectorAll('.quiz-option');
+      siblings.forEach(sib => sib.classList.remove('selected'));
+      button.classList.add('selected');
+      
+      // Sparkle effect
+      createSparkle(button);
+      
+      // Auto-advance after brief delay
+      setTimeout(() => {
+        quizState.currentQuestion++;
+        
+        if (quizState.currentQuestion < 5) {
+          showQuestion(quizState.currentQuestion);
+        } else {
+          // Quiz complete - show recommendation
+          quizState.isComplete = true;
+          setTimeout(() => {
+            showRecommendation();
+          }, 600);
+        }
+      }, 600);
+    }
+
+    function createSparkle(element) {
+      const rect = element.getBoundingClientRect();
+      const sparkle = document.createElement('div');
+      sparkle.textContent = '✨';
+      sparkle.className = 'sparkle';
+      sparkle.style.left = (rect.left + rect.width / 2) + 'px';
+      sparkle.style.top = (rect.top + rect.height / 2) + 'px';
+      
+      document.body.appendChild(sparkle);
+      
+      setTimeout(() => {
+        sparkle.remove();
+      }, 800);
+    }
+
+    function showRecommendation() {
+      const recommendation = generateRecommendation(quizState.selections);
+      updatePreview(recommendation);
+      
+      // Hide placeholder, show recommendation
+      const placeholder = document.getElementById('preview-placeholder');
+      const card = document.getElementById('recommendation-card');
+      
+      placeholder.style.opacity = '0';
+      setTimeout(() => {
+        placeholder.style.display = 'none';
+        card.style.display = 'block';
+        setTimeout(() => {
+          card.style.opacity = '1';
+        }, 50);
+      }, 500);
+    }
+
+    function updatePreview(recommendation) {
+      document.getElementById('rec-title').textContent = recommendation.title;
+      document.getElementById('rec-subtitle').textContent = recommendation.subtitle;
+      document.getElementById('rec-description').textContent = recommendation.description;
+      
+      // Update thumbnail gradient based on recommendation
+      const thumbnail = document.getElementById('rec-thumbnail');
+      thumbnail.style.background = recommendation.gradient;
+    }
+
+    function generateRecommendation(selections) {
+      // Smart pattern matching for curated recommendations
+      const { niche, audience, style, mood, duration } = selections;
+      
+      // Pattern 1: Tech + Businesses + Mixed Media + Bold
+      if (niche === 'Tech' && audience === 'Businesses' && style === 'Mixed Media' && mood === 'Bold') {
+        return {
+          title: 'Mixed Media Explainer',
+          subtitle: 'Dynamic & Engaging',
+          description: 'Combine live-action and motion graphics for a vibrant, data-driven story that grabs attention and converts. Perfect for showcasing innovation and technical capabilities.',
+          gradient: 'linear-gradient(135deg, rgba(217, 70, 239, 0.3), rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3))'
+        };
+      }
+      
+      // Pattern 2: Healthcare + Consumers + Animation + Emotional
+      if (niche === 'Healthcare' && audience === 'Consumers' && style === 'Animation' && mood === 'Emotional') {
+        return {
+          title: 'Animated Patient Story',
+          subtitle: 'Heartfelt & Memorable',
+          description: 'Touch hearts with beautifully crafted animation that brings patient journeys to life. Build trust and emotional connection with your audience.',
+          gradient: 'linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(168, 85, 247, 0.3), rgba(99, 102, 241, 0.3))'
+        };
+      }
+      
+      // Pattern 3: Education + Students + Motion Graphics + Playful
+      if (niche === 'Education' && audience === 'Students' && (style === 'Motion Graphics' || style === 'Animation') && mood === 'Playful') {
+        return {
+          title: 'Motion Graphics Tutorial',
+          subtitle: 'Fun & Educational',
+          description: 'Make learning irresistible with vibrant motion graphics and playful transitions. Engage students while delivering clear, memorable lessons.',
+          gradient: 'linear-gradient(135deg, rgba(251, 146, 60, 0.3), rgba(249, 115, 22, 0.3), rgba(245, 158, 11, 0.3))'
+        };
+      }
+      
+      // Pattern 4: Real Estate + Consumers + Live Action + Inspirational
+      if (niche === 'Real Estate' && audience === 'Consumers' && style === 'Live Action' && mood === 'Inspirational') {
+        return {
+          title: 'Cinematic Property Tour',
+          subtitle: 'Aspirational & Immersive',
+          description: 'Showcase properties with stunning cinematography that inspires dreams and drives decisions. Make every space feel like home.',
+          gradient: 'linear-gradient(135deg, rgba(14, 165, 233, 0.3), rgba(6, 182, 212, 0.3), rgba(20, 184, 166, 0.3))'
+        };
+      }
+      
+      // Pattern 5: Retail + Consumers + Animation + Playful + Reels
+      if (niche === 'Retail' && audience === 'Consumers' && style === 'Animation' && mood === 'Playful' && duration === 'Reels') {
+        return {
+          title: 'Snackable Brand Story',
+          subtitle: 'Quick & Catchy',
+          description: 'Stop scrollers in their tracks with bold, playful animation designed for social feeds. Maximum impact in under a minute.',
+          gradient: 'linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(252, 165, 165, 0.3), rgba(254, 215, 170, 0.3))'
+        };
+      }
+      
+      // Pattern 6: Tech + Investors + Minimal Explainer + Corporate
+      if (niche === 'Tech' && audience === 'Investors' && style === 'Minimal Explainer' && mood === 'Corporate') {
+        return {
+          title: 'Data-Driven Pitch Deck',
+          subtitle: 'Professional & Persuasive',
+          description: 'Present your vision with clean, minimalist design that highlights key metrics and growth potential. Confidence-inspiring clarity.',
+          gradient: 'linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(79, 70, 229, 0.3), rgba(67, 56, 202, 0.3))'
+        };
+      }
+      
+      // Pattern 7: Healthcare + Businesses + Motion Graphics + Corporate
+      if (niche === 'Healthcare' && audience === 'Businesses' && style === 'Motion Graphics' && mood === 'Corporate') {
+        return {
+          title: 'Medical Technology Overview',
+          subtitle: 'Clear & Credible',
+          description: 'Simplify complex healthcare solutions with precise motion graphics. Build credibility while making innovation accessible.',
+          gradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.3), rgba(29, 78, 216, 0.3))'
+        };
+      }
+      
+      // Pattern 8: Education + Employees + Live Action + Inspirational
+      if (niche === 'Education' && audience === 'Employees' && style === 'Live Action' && mood === 'Inspirational') {
+        return {
+          title: 'Team Training Narrative',
+          subtitle: 'Engaging & Empowering',
+          description: 'Transform training into inspiration with real stories and authentic moments. Build culture while developing skills.',
+          gradient: 'linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(147, 51, 234, 0.3), rgba(126, 34, 206, 0.3))'
+        };
+      }
+      
+      // Pattern 9: Retail + Businesses + Mixed Media + Bold + Demo
+      if (niche === 'Retail' && audience === 'Businesses' && style === 'Mixed Media' && mood === 'Bold' && duration === 'Demo') {
+        return {
+          title: 'Product Demo Showcase',
+          subtitle: 'Comprehensive & Captivating',
+          description: 'Blend product shots, graphics, and testimonials into a compelling demo that converts prospects into partners.',
+          gradient: 'linear-gradient(135deg, rgba(217, 70, 239, 0.3), rgba(236, 72, 153, 0.3), rgba(244, 63, 94, 0.3))'
+        };
+      }
+      
+      // Pattern 10: Any + Consumers + Animation + Bold + Reels
+      if (audience === 'Consumers' && style === 'Animation' && mood === 'Bold' && duration === 'Reels') {
+        return {
+          title: 'Viral Animation Reel',
+          subtitle: 'Bold & Shareable',
+          description: 'Create scroll-stopping animations optimized for social virality. Stand out in crowded feeds with fearless creativity.',
+          gradient: 'linear-gradient(135deg, rgba(251, 113, 133, 0.3), rgba(244, 114, 182, 0.3), rgba(232, 121, 249, 0.3))'
+        };
+      }
+      
+      // Fallback recommendations based on style
+      if (style === 'Animation') {
+        return {
+          title: 'Custom Animation Video',
+          subtitle: 'Creative & Memorable',
+          description: 'Bring your story to life with custom animation that captures attention and communicates with clarity. Perfect for making complex ideas simple and engaging.',
+          gradient: 'linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(139, 92, 246, 0.3), rgba(124, 58, 237, 0.3))'
+        };
+      }
+      
+      if (style === 'Live Action') {
+        return {
+          title: 'Professional Live Video',
+          subtitle: 'Authentic & Impactful',
+          description: 'Connect with your audience through authentic, professionally shot video that builds trust and tells your story with genuine human emotion.',
+          gradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.3), rgba(29, 78, 216, 0.3))'
+        };
+      }
+      
+      if (style === 'Motion Graphics') {
+        return {
+          title: 'Motion Graphics Video',
+          subtitle: 'Dynamic & Modern',
+          description: 'Elevate your message with sleek motion graphics that transform data and concepts into visually stunning, easy-to-understand stories.',
+          gradient: 'linear-gradient(135deg, rgba(14, 165, 233, 0.3), rgba(6, 182, 212, 0.3), rgba(8, 145, 178, 0.3))'
+        };
+      }
+      
+      if (style === 'Mixed Media') {
+        return {
+          title: 'Mixed Media Production',
+          subtitle: 'Versatile & Engaging',
+          description: 'Get the best of all worlds by combining live-action footage, animation, and graphics for a rich, multi-layered storytelling experience.',
+          gradient: 'linear-gradient(135deg, rgba(217, 70, 239, 0.3), rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3))'
+        };
+      }
+      
+      // Default fallback
+      return {
+        title: 'Custom Video Solution',
+        subtitle: 'Tailored for Your Brand',
+        description: 'We\'ll craft a unique video experience perfectly suited to your brand, audience, and goals. Let\'s create something extraordinary together.',
+        gradient: 'linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3), rgba(168, 85, 247, 0.3))'
+      };
+    }
+
+    // Slider controls for solutions section
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.getElementById('solutionsTrack');
+      if (!track) return;
+      
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      const solutionDots = document.querySelectorAll('.solution-dot');
+      
+      // Get actual card width dynamically
+      const firstCard = track.querySelector('.snap-start');
+      const getCardWidth = () => {
+        if (!firstCard) return 300;
+        const cardRect = firstCard.getBoundingClientRect();
+        const gap = parseInt(window.getComputedStyle(track).gap) || 16;
+        return cardRect.width + gap;
+      };
+      
+      let cardWidth = getCardWidth();
+      // Recalculate on resize
+      window.addEventListener('resize', () => {
+        cardWidth = getCardWidth();
+      });
+      
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+      }
+      
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+      }
+      
+      // Update active dot based on scroll position
+      function updateSolutionDots() {
+        const scrollLeft = track.scrollLeft;
+        const cardIndex = Math.round(scrollLeft / cardWidth);
+        const maxIndex = solutionDots.length - 1;
+        const activeIndex = Math.min(cardIndex, maxIndex);
+        
+        solutionDots.forEach((dot, index) => {
+          if (index === activeIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+      
+      // Dot click navigation for solutions slider
+      solutionDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          track.scrollTo({
+            left: index * cardWidth,
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Listen for scroll events
+      let scrollTimeout;
+      track.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateSolutionDots, 100);
+      });
+      
+      // Initialize first dot as active
+      updateSolutionDots();
+    });
+
+    // Process Section Controls and Interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      const processTrack = document.getElementById('processTrack');
+      if (!processTrack) return;
+      
+      const processPrevBtn = document.querySelector('.process-prev-btn');
+      const processNextBtn = document.querySelector('.process-next-btn');
+      const processSteps = document.querySelectorAll('.process-step');
+      const processDots = document.querySelectorAll('.process-dot');
+      
+      // Get actual card width dynamically
+      const firstCard = processTrack.querySelector('.process-step');
+      const getCardWidth = () => {
+        if (!firstCard) return 344; // fallback: 320px card + 24px gap
+        const cardRect = firstCard.getBoundingClientRect();
+        const gap = parseInt(window.getComputedStyle(processTrack).gap) || 24;
+        return cardRect.width + gap;
+      };
+      
+      let cardWidth = getCardWidth();
+      // Recalculate on resize
+      window.addEventListener('resize', () => {
+        cardWidth = getCardWidth();
+      });
+      
+      // Previous button click
+      if (processPrevBtn) {
+        processPrevBtn.addEventListener('click', () => {
+          processTrack.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+      }
+      
+      // Next button click
+      if (processNextBtn) {
+        processNextBtn.addEventListener('click', () => {
+          processTrack.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+      }
+      
+      // Update active dot and step based on scroll position
+      function updateActiveIndicators() {
+        const scrollLeft = processTrack.scrollLeft;
+        const cardIndex = Math.round(scrollLeft / cardWidth);
+        const maxIndex = Math.max(processDots.length - 1, processSteps.length - 1);
+        const activeIndex = Math.min(cardIndex, maxIndex);
+        
+        // Update dots
+        processDots.forEach((dot, index) => {
+          if (index === activeIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+        
+        // Update steps
+        processSteps.forEach((step, index) => {
+          if (index === activeIndex) {
+            step.classList.add('active');
+          } else {
+            step.classList.remove('active');
+          }
+        });
+      }
+      
+      // Listen for scroll events on process track
+      let scrollTimeout;
+      processTrack.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateActiveIndicators, 100);
+      });
+      
+      // Dot click navigation
+      processDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          processTrack.scrollTo({
+            left: index * cardWidth,
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Initialize first dot as active
+      updateActiveIndicators();
+      
+      // Keyboard navigation for accessibility
+      processTrack.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          processPrevBtn?.click();
+        } else if (e.key === 'ArrowRight') {
+          processNextBtn?.click();
+        }
+      });
+    });
+
+    // Initialize Lucide icons
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+
+  <!-- Global Storytelling Map Visualization -->
+  <script>
+    // Wait for D3 to load
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof d3 === 'undefined') {
+        console.warn('D3.js not loaded. Map visualization skipped.');
+        return;
+      }
+
+      // Key regions data (approximate coordinates)
+      const keyRegions = [
+        { 
+          name: 'North America', 
+          coords: [-100, 40], 
+          color: '#06b6d4', // cyan
+          clients: ['Tech Giants', 'SaaS Leaders', 'Fortune 500']
+        },
+        { 
+          name: 'Europe', 
+          coords: [10, 50], 
+          color: '#8b5cf6', // violet
+          clients: ['EU Agencies', 'UK Brands', 'Nordic Startups']
+        },
+        { 
+          name: 'India', 
+          coords: [78, 22], 
+          color: '#f59e0b', // amber
+          clients: ['Tech Hubs', 'E-commerce', 'EdTech']
+        },
+        { 
+          name: 'Southeast Asia', 
+          coords: [105, 10], 
+          color: '#14b8a6', // teal
+          clients: ['APAC Brands', 'Fintech', 'Gaming']
+        },
+        { 
+          name: 'Middle East', 
+          coords: [50, 28], 
+          color: '#c084fc', // purple
+          clients: ['Dubai Media', 'Gulf Ventures', 'Tourism']
+        }
+      ];
+
+      // Set up SVG dimensions (responsive)
+      const svg = d3.select('#world-map');
+      const container = document.getElementById('global-map-container');
+      const width = container.offsetWidth;
+      
+      // Responsive height based on viewport
+      let height = 500;
+      if (window.innerWidth < 640) {
+        height = 350;
+      } else if (window.innerWidth < 1024) {
+        height = 400;
+      }
+
+      svg.attr('viewBox', `0 0 ${width} ${height}`)
+         .attr('preserveAspectRatio', 'xMidYMid meet')
+         .attr('height', height);
+
+      // Create projection
+      const projection = d3.geoMercator()
+        .scale(width / 6.5)
+        .translate([width / 2, height / 1.6]);
+
+      const path = d3.geoPath().projection(projection);
+
+      // Create tooltip
+      const tooltip = d3.select('body')
+        .append('div')
+        .attr('class', 'global-map-tooltip')
+        .style('position', 'absolute')
+        .style('background', 'rgba(15, 23, 42, 0.95)')
+        .style('color', 'white')
+        .style('padding', '12px 16px')
+        .style('border-radius', '12px')
+        .style('font-size', '14px')
+        .style('pointer-events', 'none')
+        .style('opacity', '0')
+        .style('backdrop-filter', 'blur(8px)')
+        .style('border', '1px solid rgba(255, 255, 255, 0.1)')
+        .style('box-shadow', '0 8px 32px rgba(0, 0, 0, 0.4)')
+        .style('z-index', '1000')
+        .style('transition', 'opacity 0.2s')
+        .style('font-family', 'Inter, sans-serif');
+
+      // Load and render world map from TopoJSON
+      d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+        .then(function(world) {
+          const countries = topojson.feature(world, world.objects.countries);
+
+          // Draw countries
+          svg.append('g')
+            .selectAll('path')
+            .data(countries.features)
+            .enter()
+            .append('path')
+            .attr('d', path)
+            .attr('fill', 'rgba(255, 255, 255, 0.03)')
+            .attr('stroke', 'rgba(255, 255, 255, 0.1)')
+            .attr('stroke-width', 0.5)
+            .style('transition', 'all 0.3s')
+            .on('mouseover', function(event, d) {
+              d3.select(this)
+                .attr('fill', 'rgba(255, 255, 255, 0.08)')
+                .attr('stroke', 'rgba(255, 255, 255, 0.3)');
+            })
+            .on('mouseout', function(event, d) {
+              d3.select(this)
+                .attr('fill', 'rgba(255, 255, 255, 0.03)')
+                .attr('stroke', 'rgba(255, 255, 255, 0.1)');
+            });
+
+          // Add regional markers
+          const markersGroup = svg.append('g').attr('class', 'regional-markers');
+
+          keyRegions.forEach(function(region) {
+            const position = projection(region.coords);
+            
+            // Outer glow circle (pulsing)
+            markersGroup.append('circle')
+              .attr('class', 'region-marker-glow')
+              .attr('cx', position[0])
+              .attr('cy', position[1])
+              .attr('r', 20)
+              .attr('fill', region.color)
+              .attr('opacity', 0.2)
+              .style('animation', 'regionPulse 2s ease-in-out infinite');
+
+            // Main marker circle
+            markersGroup.append('circle')
+              .attr('class', 'region-marker')
+              .attr('cx', position[0])
+              .attr('cy', position[1])
+              .attr('r', 8)
+              .attr('fill', region.color)
+              .attr('stroke', 'rgba(255, 255, 255, 0.8)')
+              .attr('stroke-width', 2)
+              .style('cursor', 'pointer')
+              .style('filter', `drop-shadow(0 0 8px ${region.color})`)
+              .on('mouseover', function(event) {
+                d3.select(this)
+                  .transition()
+                  .duration(200)
+                  .attr('r', 12)
+                  .attr('stroke-width', 3);
+
+                // Show tooltip with region info
+                tooltip
+                  .style('opacity', '1')
+                  .html(`
+                    <div style="font-weight: 600; margin-bottom: 6px; font-size: 15px;">${region.name}</div>
+                    <div style="opacity: 0.8; font-size: 12px;">
+                      ${region.clients.map(c => `• ${c}`).join('<br>')}
+                    </div>
+                    <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; opacity: 0.6;">
+                      Click to view case studies →
+                    </div>
+                  `)
+                  .style('left', (event.pageX + 15) + 'px')
+                  .style('top', (event.pageY - 15) + 'px');
+              })
+              .on('mouseout', function(event) {
+                d3.select(this)
+                  .transition()
+                  .duration(200)
+                  .attr('r', 8)
+                  .attr('stroke-width', 2);
+
+                tooltip.style('opacity', '0');
+              })
+              .on('mousemove', function(event) {
+                tooltip
+                  .style('left', (event.pageX + 15) + 'px')
+                  .style('top', (event.pageY - 15) + 'px');
+              })
+              .on('click', function() {
+                console.log('Region clicked:', region.name);
+                // Placeholder for future navigation
+                // window.location.href = `/case-studies?region=${region.name}`;
+              });
+
+            // Add label
+            markersGroup.append('text')
+              .attr('x', position[0])
+              .attr('y', position[1] + 30)
+              .attr('text-anchor', 'middle')
+              .attr('fill', 'rgba(255, 255, 255, 0.7)')
+              .attr('font-size', '12px')
+              .attr('font-weight', '500')
+              .attr('pointer-events', 'none')
+              .style('font-family', 'Inter, sans-serif')
+              .text(region.name);
+          });
+
+          // Add connecting arcs between regions (aurora trails)
+          const connections = [
+            [0, 1], // North America to Europe
+            [1, 2], // Europe to India
+            [2, 3], // India to Southeast Asia
+            [3, 4], // Southeast Asia to Middle East
+            [1, 4]  // Europe to Middle East
+          ];
+
+          connections.forEach(function([i, j], index) {
+            const start = projection(keyRegions[i].coords);
+            const end = projection(keyRegions[j].coords);
+            
+            // Calculate control point for curved path
+            const midX = (start[0] + end[0]) / 2;
+            const midY = (start[1] + end[1]) / 2 - 50; // Curve upward
+
+            svg.append('path')
+              .attr('class', 'aurora-path')
+              .attr('d', `M ${start[0]},${start[1]} Q ${midX},${midY} ${end[0]},${end[1]}`)
+              .attr('fill', 'none')
+              .attr('stroke', 'url(#auroraGradient1)')
+              .attr('stroke-width', 1.5)
+              .attr('opacity', 0.3)
+              .attr('stroke-dasharray', '5,5')
+              .style('animation', `auroraFlow ${8 + index}s ease-in-out infinite`)
+              .style('animation-delay', `${index * 0.5}s`);
+          });
+
+          console.log('✓ Global storytelling map loaded successfully');
+        })
+        .catch(function(error) {
+          console.error('Error loading world map:', error);
+          // Fallback: Show placeholder message
+          svg.append('text')
+            .attr('x', width / 2)
+            .attr('y', height / 2)
+            .attr('text-anchor', 'middle')
+            .attr('fill', 'rgba(255, 255, 255, 0.5)')
+            .attr('font-size', '16px')
+            .attr('font-family', 'Inter, sans-serif')
+            .text('Interactive world map loading...');
+        });
+
+      // Handle window resize (with responsive height)
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          const newWidth = container.offsetWidth;
+          
+          // Update height responsively
+          let newHeight = 500;
+          if (window.innerWidth < 640) {
+            newHeight = 350;
+          } else if (window.innerWidth < 1024) {
+            newHeight = 400;
+          }
+          
+          svg.attr('viewBox', `0 0 ${newWidth} ${newHeight}`)
+             .attr('height', newHeight);
+          
+          // Re-render map with new dimensions
+          projection.scale(newWidth / 6.5).translate([newWidth / 2, newHeight / 1.6]);
+          
+          svg.selectAll('path').attr('d', path);
+          
+          // Update marker positions
+          keyRegions.forEach(function(region, index) {
+            const position = projection(region.coords);
+            
+            svg.selectAll('.region-marker-glow, .region-marker')
+              .filter(function(d, i) { return Math.floor(i / 2) === index; })
+              .attr('cx', position[0])
+              .attr('cy', position[1]);
+            
+            svg.selectAll('text')
+              .filter(function(d, i) { return i === index; })
+              .attr('x', position[0])
+              .attr('y', position[1] + 30);
+          });
+        }, 250);
+      });
+    });
+  </script>
+
+  
+
+  <!-- Cinematic Closing Section: We Don't Just Make Videos — We Create Experiences -->
+  <section class="relative overflow-hidden py-24 sm:py-32 lg:py-40">
+    <!-- Cinematic gradient background -->
+    <div class="absolute inset-0 -z-10">
+      <!-- Base gradient: midnight indigo → deep violet → soft coral glow -->
+      <div class="absolute inset-0" style="
+        background: linear-gradient(135deg, 
+          #1e1b4b 0%, 
+          #312e81 20%, 
+          #581c87 45%,
+          #7c2d82 70%,
+          #8b4672 85%,
+          #935e63 100%);
+      "></div>
+
+      <!-- Animated motion overlay -->
+      <div class="absolute inset-0 opacity-60" style="
+        background: 
+          radial-gradient(1400px 900px at 20% 30%, rgba(139, 92, 246, 0.3), transparent 70%),
+          radial-gradient(1200px 1000px at 80% 70%, rgba(255, 139, 123, 0.25), transparent 70%),
+          radial-gradient(1000px 800px at 50% 50%, rgba(168, 85, 247, 0.2), transparent 60%);
+        animation: panGradient 25s ease-in-out infinite;
+      "></div>
+
+      <!-- Motion light streaks -->
+      <div class="pointer-events-none absolute top-0 left-1/4 h-px w-96 blur-sm" 
+           style="background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent); animation: floatSoft 8s ease-in-out infinite;"></div>
+      <div class="pointer-events-none absolute top-1/3 right-1/4 h-px w-80 blur-sm" 
+           style="background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); animation: floatSoft 10s ease-in-out infinite 2s;"></div>
+      <div class="pointer-events-none absolute bottom-1/4 left-1/3 h-px w-72 blur-sm" 
+           style="background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent); animation: floatSoft 12s ease-in-out infinite 4s;"></div>
+
+      <!-- Ambient glows -->
+      <div class="pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full blur-3xl opacity-30" 
+           style="background: radial-gradient(circle, rgba(168, 85, 247, 0.6), transparent 70%);"></div>
+      <div class="pointer-events-none absolute top-1/2 right-1/5 h-80 w-80 rounded-full blur-3xl opacity-25" 
+           style="background: radial-gradient(circle, rgba(255, 139, 123, 0.5), transparent 70%);"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Title Section -->
+      <div class="text-center mb-16 sm:mb-20">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs text-white/90 ring-1 ring-white/20 backdrop-blur-sm mb-6">
+          <span class="h-1.5 w-1.5 rounded-full bg-fuchsia-400 animate-pulse"></span>
+          The Motionify Difference
+        </div>
+        
+        <!-- Main Headline -->
+        <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]" 
+            style="font-family: 'Playfair Display', serif;">
+          We Don't Just Make Videos —<br>
+          <span class="bg-gradient-to-r from-fuchsia-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+            We Create Experiences.
+          </span>
+        </h2>
+        
+        <!-- Subheadline -->
+        <p class="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto font-medium" style="font-family: 'Inter', sans-serif;">
+          Trusted by global brands for creativity, reliability, and results.
+        </p>
+      </div>
+
+      <!-- Value Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
+        
+        <!-- Pillar 1: End-to-End Video Solutions -->
+        <div class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1">
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="inline-flex items-center justify-center h-14 w-14 rounded-xl mb-6 bg-gradient-to-br from-purple-500/20 to-fuchsia-500/20 ring-1 ring-white/20 group-hover:ring-white/40 transition-all group-hover:scale-110">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-300">
+                <rect width="18" height="18" x="3" y="3" rx="2"/>
+                <path d="m10 8 6 4-6 4Z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-white mb-3" style="font-family: 'Space Grotesk', sans-serif;">
+              End-to-End Video Solutions
+            </h3>
+            <p class="text-base text-white/70 leading-relaxed">
+              From concept to final cut, all under one roof.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Creative & Strategic Expertise -->
+        <div class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1">
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-fuchsia-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="inline-flex items-center justify-center h-14 w-14 rounded-xl mb-6 bg-gradient-to-br from-fuchsia-500/20 to-pink-500/20 ring-1 ring-white/20 group-hover:ring-white/40 transition-all group-hover:scale-110">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-fuchsia-300">
+                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                <path d="M9 13a4.5 4.5 0 0 0 3-4"/>
+                <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                <path d="M12 13h4"/>
+                <path d="M12 18h6a2 2 0 0 1 2 2v1"/>
+                <path d="M12 8h8"/>
+                <path d="M16 8V5a2 2 0 0 1 2-2"/>
+                <circle cx="16" cy="13" r=".5"/>
+                <circle cx="18" cy="3" r=".5"/>
+                <circle cx="20" cy="21" r=".5"/>
+                <circle cx="20" cy="8" r=".5"/>
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-white mb-3" style="font-family: 'Space Grotesk', sans-serif;">
+              Creative & Strategic Expertise
+            </h3>
+            <p class="text-base text-white/70 leading-relaxed">
+              We merge emotion with business intent.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Data-Driven Recommendations -->
+        <div class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1">
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="inline-flex items-center justify-center h-14 w-14 rounded-xl mb-6 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 ring-1 ring-white/20 group-hover:ring-white/40 transition-all group-hover:scale-110">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300">
+                <path d="M3 3v18h18"/>
+                <path d="m19 9-5 5-4-4-3 3"/>
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-white mb-3" style="font-family: 'Space Grotesk', sans-serif;">
+              Data-Driven Recommendations
+            </h3>
+            <p class="text-base text-white/70 leading-relaxed">
+              Every story backed by insight and impact.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Global Delivery, Local Insight -->
+        <div class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1">
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="inline-flex items-center justify-center h-14 w-14 rounded-xl mb-6 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 ring-1 ring-white/20 group-hover:ring-white/40 transition-all group-hover:scale-110">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                <path d="M2 12h20"/>
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-white mb-3" style="font-family: 'Space Grotesk', sans-serif;">
+              Global Delivery, Local Insight
+            </h3>
+            <p class="text-base text-white/70 leading-relaxed">
+              Crafted for every market, from San Francisco to Singapore.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 5: Fast Turnaround, Flawless Quality -->
+        <div class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1 md:col-span-2 lg:col-span-1">
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="inline-flex items-center justify-center h-14 w-14 rounded-xl mb-6 bg-gradient-to-br from-amber-500/20 to-orange-500/20 ring-1 ring-white/20 group-hover:ring-white/40 transition-all group-hover:scale-110">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-300">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-white mb-3" style="font-family: 'Space Grotesk', sans-serif;">
+              Fast Turnaround, Flawless Quality
+            </h3>
+            <p class="text-base text-white/70 leading-relaxed">
+              Precision meets passion, on schedule.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Band -->
+      <div class="relative">
+        <!-- Background glow for CTA -->
+        <div class="absolute inset-0 -z-10 blur-3xl opacity-30" 
+             style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.5), transparent 70%);"></div>
+        
+        <div class="text-center bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 py-12 sm:py-16 px-6 sm:px-12">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4" style="font-family: 'Playfair Display', serif;">
+            Ready to tell your story with Motionify?
+          </h3>
+          
+          <p class="text-base sm:text-lg text-white/70 mb-8 max-w-2xl mx-auto italic" style="font-family: 'Inter', sans-serif;">
+            "Emotion moves people. Strategy moves results. We bring both to every frame."
+          </p>
+          
+          <a href="#" class="group inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-white font-bold text-lg shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-purple-500/50" 
+             style="background: linear-gradient(135deg, #a855f7 0%, #d946ef 50%, #ec4899 100%); animation: gentlePulse 3s ease-in-out infinite;">
+            <span>Work With Us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
+              <path d="M5 12h14"/>
+              <path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative bg-gray-950 border-t border-white/5">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+        
+        <!-- Left: Logo & Address -->
+        <div class="flex flex-col items-center md:items-start gap-6 text-center md:text-left">
+          <img src="motionify-light-logo.png" alt="Motionify.Studio" class="h-8 w-auto" />
+          <p class="text-sm text-gray-400 leading-relaxed max-w-sm">
+            F Block, Plot No: 264, Door No: F/22, 2nd Floor,<br />
+            3rd, 2nd Main Rd, Block F, Anna Nagar,<br />
+            Chennai - 600102
+          </p>
+        </div>
+
+        <!-- Right: CTA & Social -->
+        <div class="flex flex-col items-center gap-8">
+          <a href="#" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <span>Get Started</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+          
+          <div class="flex items-center gap-4">
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">IN.</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">LI.</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">FB.</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">YT.</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-12 pt-8 border-t border-white/5 text-center">
+        <p class="text-gray-500 text-sm">© 2025 Motionify.Studio. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- Hero Collage Component -->
+<!-- Cinematic collage grid with 4 images, glow effect, and floating badges -->
+<div class="relative mx-auto lg:ml-auto w-full max-w-md">
+  <!-- Glow -->
+  <div class="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-fuchsia-500/20 via-violet-500/20 to-blue-500/20 blur-2xl"></div>
+  <div class="relative grid grid-cols-2 gap-3">
+    <div class="space-y-3">
+      <div class="aspect-[3/4] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5 backdrop-blur shadow-2xl">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Behind the scenes set" class="w-full h-full object-cover opacity-90">
+      </div>
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5 backdrop-blur shadow-2xl">
+        <img src="https://images.unsplash.com/photo-1451188502541-13943edb6acb?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Editor timeline" class="w-full h-full object-cover opacity-90">
+      </div>
+    </div>
+    <div class="space-y-3 pt-6">
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5 backdrop-blur shadow-2xl">
+        <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&amp;q=80" alt="Cinematic lighting" class="w-full h-full object-cover opacity-90">
+      </div>
+      <div class="aspect-[3/4] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5 backdrop-blur shadow-2xl">
+        <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Director's monitor" class="w-full h-full object-cover opacity-90">
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating badges -->
+  <div class="pointer-events-none">
+    <!-- Strategy Badge -->
+    <div class="absolute -right-3 -top-3 flex items-center gap-2 rounded-xl bg-white/90 px-3 py-2 shadow-xl ring-1 ring-black/5 backdrop-blur">
+      <div class="h-8 w-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-fuchsia-500 flex items-center justify-center shadow-md">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" class="lucide lucide-target text-white"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+      </div>
+      <div>
+        <p class="text-xs text-gray-600 text-on-image font-headline" style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">Strategy</p>
+        <p class="text-sm font-medium text-gray-900 tracking-tight">Conversion‑ready edits</p>
+      </div>
+    </div>
+    <!-- Insights Badge -->
+    <div class="absolute -left-3 -bottom-3 flex items-center gap-2 rounded-xl bg-white/90 px-3 py-2 shadow-xl ring-1 ring-black/5 backdrop-blur">
+      <div class="h-8 w-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-blue-600 flex items-center justify-center shadow-md">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="cpu" class="lucide lucide-cpu text-white"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+      </div>
+      <div>
+        <p class="text-xs text-gray-600 text-on-image font-headline" style="text-shadow: 0 2px 8px rgba(0,0,0,0.3);">Insights</p>
+        <p class="text-sm font-medium text-gray-900 tracking-tight">Performance analytics</p>
+      </div>
+    </div>
+  </div>
+</div>

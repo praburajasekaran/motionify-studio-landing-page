@@ -1,0 +1,252 @@
+<!--
+  Support / Closing CTA Component
+  Final value propositions and CTA with footer
+  Erik Kennedy Heuristics Applied:
+  - Heuristic 3 & 4: Doubled whitespace + 8pt grid
+  - Heuristic 1: Light from sky (shadows downward)
+  - Heuristic 7: Pop/Un-pop text hierarchy
+  - Heuristic 8: Good fonts (Fraunces + Inter)
+  - Heuristic 10: Pass the squint test (CTA stands out)
+  - Heuristic 26: Whitespace = grouping
+-->
+
+<!-- Cinematic Closing Section -->
+<section class="relative overflow-hidden py-32 sm:py-40 lg:py-48">
+  <!-- Cinematic gradient background -->
+  <div class="absolute inset-0 -z-10">
+    <!-- Base gradient: midnight indigo to deep violet -->
+    <div class="absolute inset-0" style="
+      background: linear-gradient(135deg,
+        #1e1b4b 0%,
+        #312e81 20%,
+        #581c87 45%,
+        #7c2d82 70%,
+        #8b4672 85%,
+        #935e63 100%);
+    "></div>
+
+    <!-- Animated motion overlay -->
+    <div class="absolute inset-0 opacity-60" style="
+      background:
+        radial-gradient(1400px 900px at 20% 30%, rgba(139, 92, 246, 0.3), transparent 70%),
+        radial-gradient(1200px 1000px at 80% 70%, rgba(255, 139, 123, 0.25), transparent 70%),
+        radial-gradient(1000px 800px at 50% 50%, rgba(168, 85, 247, 0.2), transparent 60%);
+    "></div>
+
+    <!-- Ambient glows - Heuristic 1: Light from sky -->
+    <div class="pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full blur-3xl opacity-30"
+         style="background: radial-gradient(circle, rgba(168, 85, 247, 0.6), transparent 70%);"></div>
+    <div class="pointer-events-none absolute top-1/2 right-1/5 h-80 w-80 rounded-full blur-3xl opacity-25"
+         style="background: radial-gradient(circle, rgba(255, 139, 123, 0.5), transparent 70%);"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+
+    <!-- Title Section - Heuristic 3: Doubled whitespace (mb-24 = 96px) -->
+    <div class="text-center mb-24 sm:mb-32">
+      <!-- Badge - Heuristic 4: 8pt spacing -->
+      <div class="inline-flex items-center gap-3 rounded-full bg-white/10 px-5 py-2 text-sm text-white/90 ring-1 ring-white/20 backdrop-blur-sm mb-8">
+        <span class="h-2 w-2 rounded-full bg-fuchsia-400 animate-pulse"></span>
+        The Motionify Difference
+      </div>
+
+      <!-- Main Headline - Heuristic 7: Pop text, Heuristic 8: Good font pairing -->
+      <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 leading-[1.1] font-headline">
+        We Don't Just Make Videos —<br>
+        <span class="bg-gradient-to-r from-fuchsia-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+          We Create Experiences.
+        </span>
+      </h2>
+
+      <!-- Subheadline - Heuristic 7: Un-pop supporting text -->
+      <p class="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto font-medium font-body">
+        Trusted by global brands for creativity, reliability, and results.
+      </p>
+    </div>
+
+    <!-- Value Pillars Grid - Heuristic 4: gap-8 = 32px, Heuristic 26: Grouping through spacing -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 mb-24 sm:mb-32">
+
+      <!-- Pillar 1: End-to-End Solutions -->
+      <div class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1">
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative">
+          <div class="inline-flex items-center justify-center h-16 w-16 rounded-xl mb-8 bg-gradient-to-br from-purple-500/20 to-fuchsia-500/20 ring-1 ring-white/20 group-hover:ring-white/40 transition-all group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-300">
+              <rect width="18" height="18" x="3" y="3" rx="2"/>
+              <path d="m10 8 6 4-6 4Z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-4 font-headline">
+            End-to-End Video Solutions
+          </h3>
+          <p class="text-lg text-white/70 leading-relaxed">
+            From concept to final cut, all under one roof.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pillar 2: Creative Expertise -->
+      <div class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1">
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-fuchsia-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative">
+          <div class="inline-flex items-center justify-center h-16 w-16 rounded-xl mb-8 bg-gradient-to-br from-fuchsia-500/20 to-pink-500/20 ring-1 ring-white/20 group-hover:ring-white/40 transition-all group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-fuchsia-300">
+              <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+              <path d="M12 13h4"/>
+              <path d="M12 18h6a2 2 0 0 1 2 2v1"/>
+              <path d="M12 8h8"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-4 font-headline">
+            Creative & Strategic Expertise
+          </h3>
+          <p class="text-lg text-white/70 leading-relaxed">
+            We merge emotion with business intent.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pillar 3: Data-Driven -->
+      <div class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1">
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative">
+          <div class="inline-flex items-center justify-center h-16 w-16 rounded-xl mb-8 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 ring-1 ring-white/20 group-hover:ring-white/40 transition-all group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300">
+              <path d="M3 3v18h18"/>
+              <path d="m19 9-5 5-4-4-3 3"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-4 font-headline">
+            Data-Driven Recommendations
+          </h3>
+          <p class="text-lg text-white/70 leading-relaxed">
+            Every story backed by insight and impact.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pillar 4: Global Delivery -->
+      <div class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1">
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative">
+          <div class="inline-flex items-center justify-center h-16 w-16 rounded-xl mb-8 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 ring-1 ring-white/20 group-hover:ring-white/40 transition-all group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+              <path d="M2 12h20"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-4 font-headline">
+            Global Delivery, Local Insight
+          </h3>
+          <p class="text-lg text-white/70 leading-relaxed">
+            Crafted for every market, from San Francisco to Singapore.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pillar 5: Fast & Flawless -->
+      <div class="group relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-white/30 transition-all duration-500 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1 md:col-span-2 lg:col-span-1">
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative">
+          <div class="inline-flex items-center justify-center h-16 w-16 rounded-xl mb-8 bg-gradient-to-br from-amber-500/20 to-orange-500/20 ring-1 ring-white/20 group-hover:ring-white/40 transition-all group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-300">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-4 font-headline">
+            Fast Turnaround, Flawless Quality
+          </h3>
+          <p class="text-lg text-white/70 leading-relaxed">
+            Precision meets passion, on schedule.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Final CTA Band - Heuristic 10: Pass squint test (primary CTA pops) -->
+    <div class="relative">
+      <!-- Background glow -->
+      <div class="absolute inset-0 -z-10 blur-3xl opacity-30"
+           style="background: radial-gradient(circle at center, rgba(168, 85, 247, 0.5), transparent 70%);"></div>
+
+      <div class="text-center bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 py-16 sm:py-20 px-8 sm:px-16">
+        <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 font-headline">
+          Ready to tell your story with Motionify?
+        </h3>
+
+        <p class="text-lg sm:text-xl text-white/70 mb-10 max-w-2xl mx-auto italic font-body">
+          "Emotion moves people. Strategy moves results. We bring both to every frame."
+        </p>
+
+        <!-- Primary CTA - Heuristic 10: Passes squint test -->
+        <a href="#" class="group inline-flex items-center gap-4 px-12 py-6 rounded-full text-white font-bold text-xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-purple-500/50 focus-ring"
+           style="background: linear-gradient(135deg, #a855f7 0%, #d946ef 50%, #ec4899 100%);">
+          <span>Work With Us</span>
+        <!-- Secondary CTA: Talk to a Creative Expert -->
+        <div class="mt-6">
+          <a href="#contact" class="btn-secondary inline-flex items-center gap-3 focus-ring">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92V19a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 12.81 19.79 19.79 0 0 1 0 4.18 2 2 0 0 1 2 2h2.09A2 2 0 0 1 6 3.72c.12.9.32 1.78.59 2.63a2 2 0 0 1-.45 2.11L5.1 9.5a16 16 0 0 0 9.4 9.4l1.04-1.04a2 2 0 0 1 2.11-.45c.85.27 1.73.47 2.63.59A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>Talk to a Creative Expert</span>
+          </a>
+        </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer - Heuristic 4: 8pt grid spacing -->
+<footer class="relative bg-gray-950 border-t border-white/5">
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+  <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-20">
+
+    <div class="flex flex-col md:flex-row items-center justify-between gap-16">
+
+      <!-- Left: Logo & Address - Heuristic 26: Grouping through whitespace -->
+      <div class="flex flex-col items-center md:items-start gap-8 text-center md:text-left">
+        <img src="/motionify-light-logo.png" alt="Motionify.Studio" class="h-10 w-auto" />
+        <p class="text-base text-gray-400 leading-relaxed max-w-sm">
+          F Block, Plot No: 264, Door No: F/22, 2nd Floor,<br />
+          3rd, 2nd Main Rd, Block F, Anna Nagar,<br />
+          Chennai - 600102
+        </p>
+      </div>
+
+      <!-- Right: CTA & Social -->
+      <div class="flex flex-col items-center gap-10">
+        <a href="#" class="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus-ring">
+          <span>Get Started</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-gray-400 hover:text-white text-base font-medium tracking-wide transition-colors duration-300">IN.</a>
+          <a href="#" class="text-gray-400 hover:text-white text-base font-medium tracking-wide transition-colors duration-300">LI.</a>
+          <a href="#" class="text-gray-400 hover:text-white text-base font-medium tracking-wide transition-colors duration-300">FB.</a>
+          <a href="#" class="text-gray-400 hover:text-white text-base font-medium tracking-wide transition-colors duration-300">YT.</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright - Heuristic 4: mt-16 = 64px, pt-10 = 40px -->
+    <div class="mt-16 pt-10 border-t border-white/5 text-center">
+      <p class="text-gray-500 text-base">© 2025 Motionify.Studio. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>

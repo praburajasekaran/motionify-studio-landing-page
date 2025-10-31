@@ -1,0 +1,6 @@
+# Explicit version paths
+/v1    /index.html  200
+/v2    /landing-page.html  200
+# Root points to v1 for now
+/      /index.html  200
+

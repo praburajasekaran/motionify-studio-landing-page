@@ -1,0 +1,137 @@
+/**
+ * Design Tokens - Motionify Studio
+ * Following Erik Kennedy UI Design Heuristics
+ * - 8pt grid system (Heuristic 4)
+ * - One accent → many variations (Heuristic 5)
+ * - Good font pairing (Heuristic 8, 15-18)
+ */
+
+:root {
+  /* ===== TYPOGRAPHY ===== */
+  /* Heuristic 8 & 15: Only use good fonts - Inter (workhorse) + Fraunces (headlines) */
+  --font-headline: 'Fraunces', serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Font Sizes - 8pt grid aligned (Heuristic 4) */
+  --text-xs: 0.75rem;    /* 12px - fixed from 11px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 3.75rem;   /* 60px */
+  --text-7xl: 4.5rem;    /* 72px */
+
+  /* Font Weights - Heuristic 7: Pop/Un-pop text */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;       /* For strong hierarchy */
+
+  /* ===== COLORS ===== */
+  /* Heuristic 5: One accent → many variations (purple-blue-pink family) */
+
+  /* Primary Gradient Family */
+  --color-fuchsia-500: #d946ef;
+  --color-fuchsia-600: #c026d3;
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7c3aed;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-indigo-500: #6366f1;
+
+  /* Grayscale - Heuristic 2: Black & white first */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+
+  /* Opacity levels for hierarchy */
+  --opacity-full: 1;
+  --opacity-high: 0.9;
+  --opacity-medium: 0.8;
+  --opacity-low: 0.7;
+  --opacity-subtle: 0.6;
+  --opacity-faint: 0.5;
+
+  /* Gradients - Reusable assets (Heuristic 23) */
+  --gradient-primary: linear-gradient(to right, var(--color-fuchsia-500), var(--color-violet-500), var(--color-blue-500));
+  --gradient-primary-hover: linear-gradient(to right, var(--color-fuchsia-600), var(--color-violet-600), var(--color-blue-600));
+
+  /* Overlay gradient for scrims/fades (Heuristic 23) */
+  --gradient-overlay-dark: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  --gradient-overlay-purple: linear-gradient(to top right, rgba(168, 85, 247, 0.35), rgba(99, 102, 241, 0.20), transparent);
+
+  /* ===== SPACING ===== */
+  /* Heuristic 3 & 4: Double whitespace + 8pt grid */
+  /* All values divisible by 4 or 8 */
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px - doubled from tight spacing */
+  --space-5: 1.25rem;    /* 20px */
+  --space-6: 1.5rem;     /* 24px - doubled from tight spacing */
+  --space-8: 2rem;       /* 32px - doubled from original 16px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px - fixed from 44px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+  --space-28: 7rem;      /* 112px */
+  --space-32: 8rem;      /* 128px */
+
+  /* ===== SHADOWS ===== */
+  /* Heuristic 1: Light comes from the sky (shadows go down) */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Purple glow shadows for brand elements */
+  --shadow-glow-purple: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 40px rgba(168, 85, 247, 0.1);
+  --shadow-glow-blue: 0 10px 30px rgba(99, 102, 241, 0.35);
+
+  /* Text shadows for text-on-image (Heuristic 6) */
+  --text-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --text-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --text-shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+  /* ===== BORDER RADIUS ===== */
+  /* 8pt grid aligned */
+  --radius-sm: 0.5rem;    /* 8px */
+  --radius-md: 0.75rem;   /* 12px */
+  --radius-lg: 1rem;      /* 16px */
+  --radius-xl: 1.5rem;    /* 24px */
+  --radius-2xl: 2rem;     /* 32px */
+  --radius-full: 9999px;  /* Pill shape */
+
+  /* ===== TRANSITIONS ===== */
+  /* Heuristic 20: State consistency ladder */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+
+  /* ===== FOCUS RINGS ===== */
+  /* Accessible focus ring tokens (applied via .focus-ring utility) */
+  --ring-color: rgba(99, 102, 241, 0.55);           /* indigo-500 @ 55% */
+  --ring-offset: 2px;                               /* outline gap */
+  --ring-width: 2px;                                /* ring thickness */
+  --ring-focus: 0 0 0 var(--ring-offset) rgba(255, 255, 255, 0),
+                0 0 0 calc(var(--ring-offset) + var(--ring-width)) var(--ring-color);
+
+  /* ===== Z-INDEX LAYERS ===== */
+  --z-base: 0;
+  --z-elevated: 10;
+  --z-header: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-tooltip: 50;
+}

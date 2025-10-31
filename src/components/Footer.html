@@ -1,0 +1,60 @@
+<!-- Footer Component -->
+<!--
+  Complete footer with navigation, social links, and copyright.
+  Ready to inject at the bottom of the page.
+
+  Design System Applied:
+  - Heuristic 4: 8pt grid spacing (16, 24, 32, 48, 64px)
+  - Fixed text-[11px] to text-xs (12px = 1.5 × 8pt)
+  - Proper spacing hierarchy
+  - Consistent design tokens
+-->
+
+<footer class="relative bg-gray-950 border-t border-white/5">
+  <!-- Decorative top border gradient -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
+
+    <!-- Main footer content: Logo/Address + CTA/Social -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+
+      <!-- Left: Logo & Address -->
+      <div class="flex flex-col items-center md:items-start gap-6 text-center md:text-left">
+        <img src="motionify-light-logo.png" alt="Motionify.Studio" class="h-8 w-auto" />
+        <p class="text-sm text-gray-400 leading-relaxed max-w-sm">
+          F Block, Plot No: 264, Door No: F/22, 2nd Floor,<br />
+          3rd, 2nd Main Rd, Block F, Anna Nagar,<br />
+          Chennai - 600102
+        </p>
+      </div>
+
+      <!-- Right: CTA & Social -->
+      <div class="flex flex-col items-center gap-8">
+        <!-- Primary CTA Button -->
+        <a href="#" class="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus-ring">
+          <span>Get Started</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+
+        <!-- Social Media Links -->
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-gray-400 hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">IN.</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">LI.</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">FB.</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm font-medium tracking-wide transition-colors duration-300">YT.</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="mt-12 pt-8 border-t border-white/5 text-center">
+      <p class="text-gray-500 text-sm">© 2025 Motionify.Studio. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>

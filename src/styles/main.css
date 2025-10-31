@@ -1,0 +1,468 @@
+/**
+ * Global Styles - Motionify Studio
+ * Erik Kennedy heuristics applied throughout
+ */
+
+@import './tokens.css';
+
+/* ===== BASE RESET ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: var(--font-normal);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-white);
+  background-color: var(--color-gray-950);
+  min-height: 100vh;
+}
+
+/* ===== TYPOGRAPHY ===== */
+/* Heuristic 7 & 18: Pop/un-pop + Opinionated fonts for headlines only */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+  font-weight: var(--font-bold);  /* Heuristic 2: Stronger hierarchy */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+}
+
+p {
+  font-family: var(--font-body);  /* Body text uses Inter, not Fraunces */
+  margin-bottom: var(--space-4);
+  opacity: var(--opacity-medium);  /* Heuristic 7: Un-pop body text */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+/* ===== BUTTONS & INTERACTIVE ELEMENTS ===== */
+/* Heuristic 19 & 20: Form control trinity + State consistency ladder */
+
+button, .btn {
+  font-family: var(--font-body);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-base);
+  border-radius: var(--radius-lg);
+  min-height: 44px; /* Mobile tap target per heuristic 24 */
+}
+
+/* Unified focus-visible for all .btn variants */
+.btn:focus-visible {
+  box-shadow: var(--ring-focus);
+}
+
+/* Disabled state across all buttons */
+.btn:disabled,
+button:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none;
+}
+
+/* Primary CTA - Heuristic 10: Pass the squint test */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  padding: var(--space-5) var(--space-10);  /* Heuristic 3: Doubled spacing */
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);  /* Stronger hierarchy */
+  box-shadow: var(--shadow-glow-blue);
+  position: relative;
+  z-index: var(--z-elevated);
+  border-radius: var(--radius-full);
+}
+
+.btn-primary:hover {
+  background: var(--gradient-primary-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Secondary CTA - Heuristic 10: Less prominent than primary */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);  /* Reduced from 0.1 */
+  color: rgba(255, 255, 255, 0.8);  /* Reduced from 1.0 */
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-base);  /* Smaller than primary */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Tertiary CTA - Header buttons */
+.btn-tertiary {
+  background: var(--color-white);
+  color: var(--color-gray-900);
+  padding: var(--space-3) var(--space-6);  /* Smaller */
+  font-size: var(--text-sm);  /* Smaller */
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-full);
+}
+
+.btn-tertiary:hover {
+  background: var(--color-gray-100);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== CARDS ===== */
+/* Heuristic 1 & 3: Light from sky + Doubled whitespace */
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8) var(--space-8);  /* Doubled from px-4 py-3 */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);  /* Downward shadow */
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(168, 85, 247, 0.25);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== GRID & LAYOUT ===== */
+/* Heuristic 3 & 4: Whitespace + 8pt grid */
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+.section {
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-20);
+}
+
+.section-lg {
+  padding-top: var(--space-28);
+  padding-bottom: var(--space-28);
+}
+
+/* Grid with proper spacing */
+.grid {
+  display: grid;
+  gap: var(--space-8);  /* Doubled from gap-4 */
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Flex utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-3 {
+  gap: var(--space-3);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
+
+/* ===== TEXT UTILITIES ===== */
+
+.font-headline { font-family: var(--font-headline); }
+.font-body { font-family: var(--font-body); }
+
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-4xl { font-size: var(--text-4xl); }
+.text-5xl { font-size: var(--text-5xl); }
+.text-6xl { font-size: var(--text-6xl); }
+.text-7xl { font-size: var(--text-7xl); }
+
+.font-light { font-weight: var(--font-light); }
+.font-normal { font-weight: var(--font-normal); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+
+.opacity-50 { opacity: var(--opacity-faint); }
+.opacity-60 { opacity: var(--opacity-subtle); }
+.opacity-70 { opacity: var(--opacity-low); }
+.opacity-80 { opacity: var(--opacity-medium); }
+.opacity-90 { opacity: var(--opacity-high); }
+
+/* ===== SPACING UTILITIES ===== */
+
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+.mt-10 { margin-top: var(--space-10); }
+.mt-12 { margin-top: var(--space-12); }
+.mt-16 { margin-top: var(--space-16); }
+
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+.py-3 { padding-top: var(--space-3); padding-bottom: var(--space-3); }
+.py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+.py-5 { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+.py-6 { padding-top: var(--space-6); padding-bottom: var(--space-6); }
+
+.px-4 { padding-left: var(--space-4); padding-right: var(--space-4); }
+.px-6 { padding-left: var(--space-6); padding-right: var(--space-6); }
+.px-8 { padding-left: var(--space-8); padding-right: var(--space-8); }
+.px-10 { padding-left: var(--space-10); padding-right: var(--space-10); }
+
+/* ===== IMAGE OVERLAYS ===== */
+/* Heuristic 6: Text-on-image 7-pack */
+
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Scrim overlay (floor fade) */
+.img-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-overlay-dark);
+  pointer-events: none;
+}
+
+/* Text shadow for badges on images */
+.text-on-image {
+  text-shadow: var(--text-shadow-md);  /* Heuristic 6 fix */
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+/* ===== RESPONSIVE ===== */
+/* Heuristic 24: Mobile form layout */
+
+@media (max-width: 768px) {
+  :root {
+    --text-5xl: 2.5rem;   /* 40px on mobile */
+    --text-4xl: 2rem;     /* 32px on mobile */
+    --text-3xl: 1.5rem;   /* 24px on mobile */
+  }
+
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  /* Mobile-optimized buttons */
+  .btn-primary {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-base);
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Ensure icon buttons meet 44px target on mobile */
+  .icon-btn { width: 44px; height: 44px; }
+}
+
+@media (min-width: 640px) {
+  .sm\\:text-lg { font-size: var(--text-lg); }
+  .sm\\:text-xl { font-size: var(--text-xl); }
+}
+
+@media (min-width: 768px) {
+  .md\\:text-xl { font-size: var(--text-xl); }
+  .md\\:text-5xl { font-size: var(--text-5xl); }
+  .md\\:text-6xl { font-size: var(--text-6xl); }
+}
+
+@media (min-width: 1024px) {
+  .lg\\:text-6xl { font-size: var(--text-6xl); }
+  .lg\\:text-7xl { font-size: var(--text-7xl); }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+
+.overflow-hidden { overflow: hidden; }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-2xl { border-radius: var(--radius-2xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+.shadow { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-2xl { box-shadow: var(--shadow-2xl); }
+
+.backdrop-blur { backdrop-filter: blur(12px); }
+
+.z-10 { z-index: var(--z-elevated); }
+.z-20 { z-index: var(--z-header); }
+.z-30 { z-index: var(--z-overlay); }
+
+/* ===== ACCESSIBILITY: FOCUS RING UTILITY ===== */
+/* Apply to interactive elements to get a consistent, accessible focus style */
+.focus-ring { outline: none; }
+.focus-ring:focus-visible {
+  box-shadow: var(--ring-focus);
+  transition: box-shadow var(--transition-fast);
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  /* Disable marquee, parallax, floating and gradient panning animations */
+  .animate-marquee,
+  .parallax-layer,
+  .floating-icon,
+  .animate-fade-in,
+  .animate-slide-in { animation: none !important; }
+  [style*='animation: panGradient'] { animation: none !important; }
+  /* Soften transitions */
+  * { transition-duration: 0ms !important; }
+}
