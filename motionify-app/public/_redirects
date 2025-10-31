@@ -1,0 +1,4 @@
+# Netlify redirects for Next.js app
+# /v2 route is handled by Next.js App Router
+
+# Keep other routes for static assets if needed

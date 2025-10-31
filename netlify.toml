@@ -6,4 +6,6 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Next.js App Router handles /v2 route automatically
+
 
