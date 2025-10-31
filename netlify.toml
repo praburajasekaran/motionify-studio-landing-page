@@ -1,0 +1,9 @@
+[build]
+  base = "motionify-app"
+  command = "npm ci && npm run build"
+  publish = "motionify-app/.next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+
