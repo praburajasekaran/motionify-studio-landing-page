@@ -2,16 +2,13 @@ import React from "react";
 
 export default function CreativeControlRoom() {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28 bg-white text-gray-900">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+    <section className="relative overflow-hidden py-20 sm:py-28 bg-gradient-to-br from-slate-50 via-blue-50/50 to-slate-100 text-gray-900">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent" />
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0" style={{
-          background: "linear-gradient(135deg,#FFF9F5 0%,#FFF5F0 25%,#F5F5FF 50%,#F0F4FF 75%,#F9F5FF 100%)",
-        }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(120deg, rgba(99,102,241,0.06), rgba(6,182,212,0.06) 40%, rgba(168,85,247,0.05))", animation: "panGradient 22s ease-in-out infinite" }} />
-        <div className="absolute inset-0 opacity-50" style={{ backgroundImage: "repeating-linear-gradient(0deg, rgba(17,24,39,0.02) 0px, rgba(17,24,39,0.02) 1px, transparent 1px, transparent 3px)" }} />
-        <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full blur-3xl opacity-30" style={{ background: "radial-gradient(circle, rgba(99,102,241,0.15), transparent 70%)" }} />
-        <div className="pointer-events-none absolute top-1/2 right-1/4 h-80 w-80 rounded-full blur-3xl opacity-25" style={{ background: "radial-gradient(circle, rgba(6,182,212,0.12), transparent 70%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(120deg, rgba(30,58,138,0.08), rgba(6,182,212,0.08) 40%, rgba(59,130,246,0.08))", animation: "panGradient 22s ease-in-out infinite" }} />
+        <div className="absolute inset-0 opacity-50" style={{ backgroundImage: "repeating-linear-gradient(0deg, rgba(30,58,138,0.03) 0px, rgba(30,58,138,0.03) 1px, transparent 1px, transparent 3px)" }} />
+        <div className="pointer-events-none absolute -top-40 left-1/4 h-96 w-96 rounded-full blur-3xl opacity-40" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%)" }} />
+        <div className="pointer-events-none absolute top-1/2 right-1/4 h-80 w-80 rounded-full blur-3xl opacity-35" style={{ background: "radial-gradient(circle, rgba(6,182,212,0.20), transparent 70%)" }} />
         <div className="pointer-events-none">
           <span className="absolute left-[10%] top-[20%] text-2xl opacity-30" style={{ animation: "floatSoft 7s ease-in-out infinite" }}>✨</span>
           <span className="absolute right-[15%] top-[30%] text-2xl opacity-30" style={{ animation: "floatSoft 8s ease-in-out infinite 1s" }}>🎬</span>
@@ -30,12 +27,39 @@ export default function CreativeControlRoom() {
               Your Creative Control Room
             </h2>
             <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-xl">
-              Track every milestone, chat with your producer, and watch your story come to life in real time.
+              Track every milestone, chat with your producer, and watch your story come to life in real time. Our integrated dashboard brings together all the tools you need for seamless collaboration.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Feature icon={(<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>)} label="Real-time chat" color="cyan" />
-              <Feature icon={(<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>)} label="Live progress" color="violet" />
-              <Feature icon={(<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>)} label="Instant downloads" color="blue" />
+
+            <div className="space-y-4 pt-6">
+              <div className="flex items-start gap-4">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 ring-2 ring-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Real-time Collaboration</h4>
+                  <p className="text-sm text-gray-600">Direct chat with your creative team, instant feedback loops, and version comments.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 ring-2 ring-violet-500/20 flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Live Progress Tracking</h4>
+                  <p className="text-sm text-gray-600">Visual milestones, automated notifications, and transparent timeline updates.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 ring-2 ring-blue-500/20 flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">Asset Management</h4>
+                  <p className="text-sm text-gray-600">Instant downloads, organized file versions, and multi-format exports ready for every platform.</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -151,7 +175,7 @@ export default function CreativeControlRoom() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.3) 50%, rgba(15, 23, 42, 0.6) 100%)" }} />
+      <div className="absolute inset-x-0 bottom-0 h-48 pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.08) 55%, rgba(15, 23, 42, 0.18) 100%)" }} />
     </section>
   );
 }
@@ -171,5 +195,8 @@ function Feature({ icon, label, color }: { icon: React.ReactNode; label: string;
     </div>
   );
 }
+
+
+
 
 

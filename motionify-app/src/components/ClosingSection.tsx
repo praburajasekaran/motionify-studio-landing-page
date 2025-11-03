@@ -34,17 +34,7 @@ export default function ClosingSection() {
           ))}
         </div>
 
-        <div className="relative">
-          <div className="absolute inset-0 -z-10 blur-3xl opacity-30" style={{ background: 'radial-gradient(circle at center, rgba(168, 85, 247, 0.5), transparent 70%)' }} />
-          <div className="text-center bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 py-12 sm:py-16 px-6 sm:px-12">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Ready to tell your story with Motionify?</h3>
-            <p className="text-base sm:text-lg text-white/70 mb-8 max-w-2xl mx-auto italic">"Emotion moves people. Strategy moves results. We bring both to every frame."</p>
-            <a href="#" className="group inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-white font-bold text-lg shadow-2xl transform transition-all duration-300 hover:scale-105" style={{ background: 'linear-gradient(135deg, #a855f7 0%, #d946ef 50%, #ec4899 100%)', animation: 'gentlePulse 3s ease-in-out infinite' }}>
-              <span>Work With Us</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
@@ -97,5 +87,8 @@ const pillars = [
     )
   },
 ];
+
+
+
 
 

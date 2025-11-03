@@ -10,3 +10,6 @@ Sync rules:
 - When adding a new component, create `src/components/<Name>.html` first, then port to `motionify-app/src/components/<Name>.tsx` if needed.
 
 
+
+
+

@@ -127,9 +127,35 @@ html { scroll-behavior: smooth; }
 .process-dot:focus-visible { outline:2px solid #8b5cf6; outline-offset:4px; }
 .process-dot.active { background: linear-gradient(135deg,#d946ef,#8b5cf6,#3b82f6); width:2rem; box-shadow:0 4px 12px rgba(139,92,246,.5); transform: scale(1.05); animation: dotPulse 2.5s ease-in-out infinite; }
 
-/* Solution dots */
-.solution-dot { padding:.375rem; margin:-.375rem; display:inline-block; transition: all .3s ease; width:.375rem; height:.375rem; border-radius:9999px; }
-.solution-dot.active { background-color:#4b5563 !important; width:1.5rem !important; height:.375rem !important; border-radius:9999px !important; }
+/* Solution dots - Clean, elegant carousel indicators */
+.solution-dot {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: #e5e7eb;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.solution-dot:hover {
+  opacity: 0.8;
+  background-color: #9ca3af;
+}
+
+.solution-dot:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.solution-dot.active {
+  background-color: #4f46e5;
+  width: 24px;
+  border-radius: 4px;
+  opacity: 1;
+}
 
 /* Quiz animations */
 .quiz-question.active { display:block !important; animation: questionFadeIn .6s cubic-bezier(.4,0,.2,1) forwards; }
