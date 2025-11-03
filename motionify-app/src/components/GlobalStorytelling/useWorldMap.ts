@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import * as d3 from "d3";
+import type { GeoPermissibleObjects } from "d3-geo";
 import { feature } from "topojson-client";
 
 type Region = { name: string; coords: [number, number]; color: string; clients: string[] };
@@ -50,11 +51,11 @@ export function useWorldMap(svgSelector: string, containerSelector: string) {
       .then((world: any) => {
         if (destroyed) return;
         const countries = feature(world, world.objects.countries) as any;
-        svg.append('g').selectAll('path')
-          .data(countries.features)
+        svg.append('g').selectAll<SVGPathElement, GeoPermissibleObjects>('path')
+          .data<GeoPermissibleObjects>(countries.features as unknown as GeoPermissibleObjects[])
           .enter()
           .append('path')
-          .attr('d', path)
+          .attr('d', (d) => (path(d) ?? ""))
           .attr('fill', 'rgba(255,255,255,.03)')
           .attr('stroke', 'rgba(255,255,255,.1)')
           .attr('stroke-width', .5)
