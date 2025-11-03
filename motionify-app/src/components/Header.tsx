@@ -15,11 +15,11 @@ export default function Header() {
               priority
             />
           </a>
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-8">
             <a href="#" className="text-sm text-white/80 hover:text-white transition">Work</a>
             <a href="#" className="text-sm text-white/80 hover:text-white transition">Approach</a>
             <a href="#" className="text-sm text-white/80 hover:text-white transition">Pricing</a>
-            <a href="#" className="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 px-4 py-2 text-sm font-medium hover:bg-gray-100 transition shadow">
+            <a href="#" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-2.5 text-sm font-medium hover:from-orange-600 hover:to-orange-700 transition shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40">
               Get in touch
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </a>

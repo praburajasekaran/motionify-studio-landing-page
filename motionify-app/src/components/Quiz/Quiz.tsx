@@ -7,7 +7,7 @@ import { generateRecommendation } from "./recommendation";
 type Option = { key: keyof ReturnType<typeof useQuiz>["selections"]; value: string; label: string };
 
 export default function Quiz() {
-  const { current, total, selections, select, setCurrent, isComplete } = useQuiz();
+  const { current, total, selections, select, setCurrent, goBack, reset, isComplete } = useQuiz();
   const placeholderRef = useRef<HTMLDivElement | null>(null);
   const cardRef = useRef<HTMLDivElement | null>(null);
 
@@ -72,16 +72,37 @@ export default function Quiz() {
               {questions.map((q, idx) => (
                 <div key={q.title} className={`${idx === current ? 'block quiz-question active' : 'hidden opacity-0'}`}>
                   <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-6 sm:p-8">
+                    {current > 0 && (
+                      <div className="mb-4">
+                        <button
+                          className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium bg-white/5 ring-1 ring-white/10 text-white/80 hover:bg-white/10 transition"
+                          onClick={() => goBack()}
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80"><path d="M15 18l-6-6 6-6"/></svg>
+                          Back
+                        </button>
+                      </div>
+                    )}
                     <h3 className="text-2xl sm:text-3xl font-semibold mb-2">{q.title}</h3>
                     <p className="text-white/60 text-sm mb-6">{q.help}</p>
                     <div className="flex flex-wrap gap-3">
                       {q.options.map((opt) => (
                         <button
                           key={opt}
-                          className={`quiz-option ${selections[q.key] === opt ? 'selected' : ''}`}
+                          className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-medium transition-all
+                            ring-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent
+                            bg-white/5 ring-white/10 text-white/90 hover:bg-white/10 hover:ring-white/20 hover:shadow-md
+                            ${selections[q.key] === opt ?
+                              'bg-gradient-to-r from-fuchsia-500/20 via-violet-500/20 to-blue-500/20 ring-violet-400/40 text-white shadow-[0_8px_24px_rgba(139,92,246,.25)]' :
+                              ''}
+                          `}
+                          aria-pressed={selections[q.key] === opt}
                           onClick={() => select(q.key, opt)}
                         >
-                          {labelFor(q.key, opt)}
+                          <span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/10">
+                            {iconFor(q.key, opt)}
+                          </span>
+                          <span>{labelFor(q.key, opt)}</span>
                         </button>
                       ))}
                     </div>
@@ -118,10 +139,34 @@ export default function Quiz() {
                   <h3 className="text-xl sm:text-2xl font-semibold mb-2">{recommendation?.title}</h3>
                   <p className="text-base text-white/70 font-medium mb-3">{recommendation?.subtitle}</p>
                   <p className="text-sm text-white/60 leading-relaxed mb-6">{recommendation?.description}</p>
-                  <a href="#" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-blue-500 px-6 py-3 text-sm font-medium text-white shadow-lg hover:brightness-110 transition">
-                    <span>Start This Project</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </a>
+                  <div className="flex items-center gap-3">
+                    <a href="#" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-blue-500 px-6 py-3 text-sm font-medium text-white shadow-lg hover:brightness-110 transition">
+                      <span>Start This Project</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                    <button
+                      className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium bg-white/5 ring-1 ring-white/10 text-white/90 hover:bg-white/10 transition"
+                      onClick={() => {
+                        // Show placeholder again and hide card
+                        if (placeholderRef.current) {
+                          placeholderRef.current.style.display = 'block';
+                          requestAnimationFrame(() => {
+                            if (placeholderRef.current) placeholderRef.current.style.opacity = '1';
+                          });
+                        }
+                        if (cardRef.current) {
+                          cardRef.current.style.opacity = '0';
+                          setTimeout(() => {
+                            if (cardRef.current) cardRef.current.style.display = 'none';
+                          }, 300);
+                        }
+                        reset();
+                      }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-80"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><path d="M21 3v9h-9"/></svg>
+                      Retake Quiz
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -141,4 +186,49 @@ function labelFor(key: keyof ReturnType<typeof useQuiz>["selections"], opt: stri
   return opt;
 }
 
+function iconFor(key: keyof ReturnType<typeof useQuiz>["selections"], opt: string) {
+  const commonProps = { xmlns: "http://www.w3.org/2000/svg", width: 14, height: 14, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.75, strokeLinecap: "round", strokeLinejoin: "round" } as const;
+
+  if (key === 'niche') {
+    if (opt === 'Tech') return (<svg {...commonProps}><rect x="3" y="4" width="7" height="16" rx="1"></rect><rect x="14" y="4" width="7" height="16" rx="1"></rect></svg>);
+    if (opt === 'Healthcare') return (<svg {...commonProps}><path d="M12 20s8-4.5 8-10a5 5 0 0 0-9-3 5 5 0 0 0-9 3c0 5.5 10 10 10 10"></path></svg>);
+    if (opt === 'Retail') return (<svg {...commonProps}><path d="M20 7H4l2 14h12z"></path><path d="M9 7V3h6v4"></path></svg>);
+    if (opt === 'Real Estate') return (<svg {...commonProps}><path d="M3 11l9-7 9 7"></path><path d="M9 22V12h6v10"></path></svg>);
+    if (opt === 'Education') return (<svg {...commonProps}><path d="M22 10L12 4 2 10l10 6 10-6z"></path><path d="M6 12v5a6 3 0 0 0 12 0v-5"></path></svg>);
+    return (<svg {...commonProps}><path d="M12 3v3"></path><path d="M12 18v3"></path><path d="M3 12h3"></path><path d="M18 12h3"></path><path d="M4.2 4.2l2.1 2.1"></path><path d="M17.7 17.7l2.1 2.1"></path><path d="M19.8 4.2l-2.1 2.1"></path><path d="M6.3 17.7l-2.1 2.1"></path></svg>);
+  }
+
+  if (key === 'audience') {
+    if (opt === 'Consumers') return (<svg {...commonProps}><path d="M16 21v-2a4 4 0 0 0-8 0v2"></path><circle cx="12" cy="7" r="4"></circle></svg>);
+    if (opt === 'Businesses') return (<svg {...commonProps}><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>);
+    if (opt === 'Investors') return (<svg {...commonProps}><path d="M3 3v18h18"></path><path d="M7 15l4-4 4 4 5-6"></path></svg>);
+    if (opt === 'Employees') return (<svg {...commonProps}><path d="M16 21v-2a4 4 0 0 0-8 0v2"></path><circle cx="9" cy="7" r="3"></circle><circle cx="15" cy="7" r="3"></circle></svg>);
+    if (opt === 'Students') return (<svg {...commonProps}><path d="M22 10L12 4 2 10l10 6 10-6z"></path><path d="M12 22v-6"></path></svg>);
+  }
+
+  if (key === 'style') {
+    if (opt === 'Live Action') return (<svg {...commonProps}><rect x="2" y="7" width="15" height="10" rx="2"></rect><path d="M17 9l5-3v12l-5-3z"></path></svg>);
+    if (opt === 'Animation') return (<svg {...commonProps}><path d="M12 3l2 4 4 .5-3 3 .7 4.5-3.7-2-3.7 2 .7-4.5-3-3 4-.5z"></path></svg>);
+    if (opt === 'Mixed Media') return (<svg {...commonProps}><rect x="3" y="3" width="8" height="8" rx="1"></rect><rect x="13" y="13" width="8" height="8" rx="1"></rect><path d="M13 3h8v8"></path></svg>);
+    if (opt === 'Motion Graphics') return (<svg {...commonProps}><path d="M3 12h18"></path><path d="M7 12v6"></path><path d="M12 12v8"></path><path d="M17 12v4"></path></svg>);
+    if (opt === 'Minimal Explainer') return (<svg {...commonProps}><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a3.5 3.5 0 1 1 5 3.1V15"></path><path d="M12 18h.01"></path></svg>);
+  }
+
+  if (key === 'mood') {
+    if (opt === 'Emotional') return (<svg {...commonProps}><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 22l7.8-8.6 1-1a5.5 5.5 0 0 0 0-7.8z"></path></svg>);
+    if (opt === 'Playful') return (<svg {...commonProps}><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><path d="M9 9h.01"></path><path d="M15 9h.01"></path></svg>);
+    if (opt === 'Inspirational') return (<svg {...commonProps}><path d="M12 2v6"></path><path d="M5.2 6.2l4.2 4.2"></path><path d="M18.8 6.2l-4.2 4.2"></path><circle cx="12" cy="14" r="6"></circle></svg>);
+    if (opt === 'Corporate') return (<svg {...commonProps}><rect x="3" y="7" width="18" height="12" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg>);
+    if (opt === 'Bold') return (<svg {...commonProps}><path d="M13 2l-2 20"></path><path d="M19 7l-6 6"></path><path d="M5 11l6 2"></path></svg>);
+  }
+
+  if (key === 'duration') {
+    if (opt === 'Reels') return (<svg {...commonProps}><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>);
+    if (opt === 'Explainer') return (<svg {...commonProps}><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M7 9h10"></path><path d="M7 13h6"></path></svg>);
+    if (opt === 'Demo') return (<svg {...commonProps}><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M7 20h10"></path></svg>);
+    if (opt === 'Any') return (<svg {...commonProps}><path d="M5 12a7 7 0 1 0 7-7"></path><path d="M12 5v7h5"></path></svg>);
+  }
+
+  return (<svg {...commonProps}><circle cx="12" cy="12" r="9"></circle></svg>);
+}
 

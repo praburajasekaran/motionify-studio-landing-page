@@ -1,36 +1,31 @@
 import Image from "next/image";
 
 export default function PortfolioGrid() {
-  const cards = [
+  const videos = [
     {
-      title: "Fitch Learning",
-      subtitle: "Educational Video Series",
-      img: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1400&auto=format&fit=crop",
-      accent: "from-indigo-500/35 via-blue-500/20",
+      title: "Creativity in Motion",
+      type: "YouTube Showcase",
+      src: "https://www.youtube.com/embed/ZDzXCMLkl1c",
     },
     {
-      title: "Indospace",
-      subtitle: "3D Simulation Walkthrough",
-      img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop",
-      accent: "from-cyan-500/35 via-blue-500/20",
+      title: "Brand Film 01",
+      type: "Vimeo — Brand Film",
+      src: "https://player.vimeo.com/video/751616114",
     },
     {
-      title: "TVS Credit",
-      subtitle: "Financial Product Explainer",
-      img: "https://images.unsplash.com/photo-1553729784-e91953dec042?q=80&w=1400&auto=format&fit=crop",
-      accent: "from-emerald-500/35 via-teal-500/20",
+      title: "Explainer 3D Walkthrough",
+      type: "Vimeo — Explainer",
+      src: "https://player.vimeo.com/video/760954768",
     },
     {
-      title: "Wild Watches",
-      subtitle: "Animated Brand Promo",
-      img: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1400&auto=format&fit=crop",
-      accent: "from-amber-500/35 via-rose-500/20",
+      title: "Product Launch Reel",
+      type: "Vimeo — Launch Reel",
+      src: "https://player.vimeo.com/video/600744481",
     },
     {
-      title: "Dopplr",
-      subtitle: "SaaS Launch Story",
-      img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop",
-      accent: "from-violet-600/35 via-indigo-500/20",
+      title: "Training & Education",
+      type: "Vimeo — Training",
+      src: "https://player.vimeo.com/video/600803860",
     },
   ];
 
@@ -55,25 +50,28 @@ export default function PortfolioGrid() {
             <div className="pointer-events-none absolute -inset-x-10 -top-6 h-24 rounded-full blur-2xl opacity-70" style={{ background: "radial-gradient(60% 100% at 50% 50%, rgba(99,102,241,0.18), rgba(99,102,241,0))" }} />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6">
-              {cards.map((c, i) => (
-                <a key={c.title} href="#" className="group relative rounded-2xl overflow-hidden bg-white/60 ring-1 ring-gray-200 shadow-sm hover:shadow-xl transition">
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent to-transparent" />
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image src={c.img} alt={c.title} width={1280} height={800} className="w-full h-full object-cover transition duration-500 ease-out group-hover:scale-[1.04]" />
-                    <div className={`absolute inset-0 bg-gradient-to-tr ${c.accent} to-transparent opacity-70 transition duration-300 group-hover:opacity-80`} />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-300">
-                        <div className="h-11 w-11 rounded-full bg-white/90 ring-1 ring-black/5 shadow-lg flex items-center justify-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
-                        </div>
-                      </div>
-                    </div>
+              {videos.map((v) => (
+                <div key={v.src} className="group relative rounded-2xl overflow-hidden bg-gray-900/90 ring-1 ring-gray-700/50 shadow-lg">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <iframe
+                      src={v.src + (v.src.includes("youtube") ? "?controls=1&modestbranding=1&rel=0&playsinline=1" : "?title=0&byline=0&portrait=0&dnt=1")}
+                      title={v.title}
+                      className="w-full h-full"
+                      loading="lazy"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                      allowFullScreen
+                    />
+                    
                   </div>
-                  <div className="p-3 sm:p-4">
-                    <p className="text-sm font-medium tracking-tight">{c.title}</p>
-                    <p className="text-xs text-gray-600 mt-0.5">{c.subtitle}</p>
+                  <div className="p-3 sm:p-4 bg-gray-900/95 backdrop-blur">
+                    <p className="text-sm font-medium tracking-tight text-white">{v.title}</p>
+                    {"type" in v && v.type ? (
+                      <p className="text-xs text-gray-400 mt-0.5">{v.type}</p>
+                    ) : null}
                   </div>
-                </a>
+                </div>
               ))}
             </div>
 
@@ -89,5 +87,8 @@ export default function PortfolioGrid() {
     </section>
   );
 }
+
+
+
 
 

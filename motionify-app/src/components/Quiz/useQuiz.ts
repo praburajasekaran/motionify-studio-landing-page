@@ -35,12 +35,24 @@ export function useQuiz() {
     setCurrent((c) => Math.min(c + 1, total - 1));
   }, []);
 
+  const goBack = useCallback(() => {
+    setCurrent((c) => Math.max(c - 1, 0));
+  }, []);
+
+  const reset = useCallback(() => {
+    setSelections(INITIAL);
+    setCurrent(0);
+  }, []);
+
   const isComplete = useMemo(
     () => Object.values(selections).every((v) => v !== null),
     [selections]
   );
 
-  return { current, total, selections, select, setCurrent, isComplete };
+  return { current, total, selections, select, setCurrent, goBack, reset, isComplete };
 }
+
+
+
 
 
